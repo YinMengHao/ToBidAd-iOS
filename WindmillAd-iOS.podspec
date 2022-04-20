@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "WindmillAd-iOS"
-  spec.version      = "1.4.2"
+  spec.version      = "1.4.3"
   spec.summary      = "WindSDK is a SDK from Sigmob providing AD service."
   spec.description      = <<-DESC
   WindmillAd-iOS provides ADs which include native、banner、splash、RewardVideo、intersititial etc.
@@ -21,7 +21,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "9.0"
   spec.ios.deployment_target = '9.0'
   spec.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
-  spec.source       = { :http => "https://sdkres.sigmob.cn/windmill/ios/1.4.2_905e7935f9badc5872248f7cb7e0d527/windmill_release_ios_1.4.2_20220407.zip" }
+  spec.source       = { :http => "https://sdkres.sigmob.cn/windmill/ios/1.4.3_f1015366787a96498b83d38c10761909/windmill_release_ios_1.4.3_20220420.zip" }
   spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
   spec.requires_arc = true
   spec.default_subspec = 'WindmillSDK'
@@ -50,14 +50,14 @@ Pod::Spec.new do |spec|
   spec.subspec 'TouTiaoAdapter' do |ss|
      ss.vendored_libraries = 'windmill-sdk-ios/AdNetworks/csj/*.a'
      ss.dependency 'WindmillAd-iOS/WindmillSDK'
-     ss.dependency 'Ads-CN', '4.2.5.6'
+     ss.dependency 'Ads-CN', '4.3.0.5'
   end
 
   spec.subspec 'AdmobAdapter' do |ss|
      ss.ios.deployment_target = '10.0'
      ss.vendored_libraries = 'windmill-sdk-ios/AdNetworks/admob/*.a'
      ss.dependency 'WindmillAd-iOS/WindmillSDK'
-     ss.dependency 'Google-Mobile-Ads-SDK', '9.0.0'
+     ss.dependency 'Google-Mobile-Ads-SDK', '9.3.0'
   end
 
   spec.subspec 'AppLovinAdapter' do |ss|
@@ -69,23 +69,23 @@ Pod::Spec.new do |spec|
   spec.subspec 'MintegralAdapter' do |ss|
      ss.vendored_libraries = 'windmill-sdk-ios/AdNetworks/mintegral_global/*.a'
      ss.dependency 'WindmillAd-iOS/WindmillSDK'
-     ss.dependency 'MintegralAdSDK/SplashAd', '7.1.0.0'
-     ss.dependency 'MintegralAdSDK/BidSplashAd', '7.1.0.0'
-     ss.dependency 'MintegralAdSDK/InterstitialAd', '7.1.0.0'
-     ss.dependency 'MintegralAdSDK/InterstitialVideoAd', '7.1.0.0'
-     ss.dependency 'MintegralAdSDK/BidInterstitialVideoAd', '7.1.0.0'
-     ss.dependency 'MintegralAdSDK/NewInterstitialAd', '7.1.0.0'
-     ss.dependency 'MintegralAdSDK/BidNewInterstitialAd', '7.1.0.0'
-     ss.dependency 'MintegralAdSDK/RewardVideoAd', '7.1.0.0'
-     ss.dependency 'MintegralAdSDK/BidRewardVideoAd', '7.1.0.0'
-     ss.dependency 'MintegralAdSDK/BannerAd', '7.1.0.0'
-     ss.dependency 'MintegralAdSDK/BidBannerAd', '7.1.0.0'
+     ss.dependency 'MintegralAdSDK/SplashAd', '7.1.2.0'
+     ss.dependency 'MintegralAdSDK/BidSplashAd', '7.1.2.0'
+     ss.dependency 'MintegralAdSDK/InterstitialAd', '7.1.2.0'
+     ss.dependency 'MintegralAdSDK/InterstitialVideoAd', '7.1.2.0'
+     ss.dependency 'MintegralAdSDK/BidInterstitialVideoAd', '7.1.2.0'
+     ss.dependency 'MintegralAdSDK/NewInterstitialAd', '7.1.2.0'
+     ss.dependency 'MintegralAdSDK/BidNewInterstitialAd', '7.1.2.0'
+     ss.dependency 'MintegralAdSDK/RewardVideoAd', '7.1.2.0'
+     ss.dependency 'MintegralAdSDK/BidRewardVideoAd', '7.1.2.0'
+     ss.dependency 'MintegralAdSDK/BannerAd', '7.1.2.0'
+     ss.dependency 'MintegralAdSDK/BidBannerAd', '7.1.2.0'
   end
 
   spec.subspec 'GDTAdapter' do |ss|
      ss.vendored_libraries = 'windmill-sdk-ios/AdNetworks/gdt/*.a'
      ss.dependency 'WindmillAd-iOS/WindmillSDK'
-     ss.dependency 'GDTMobSDK', '4.13.50'
+     ss.dependency 'GDTMobSDK', '4.13.63'
   end
 
   spec.subspec 'IronSourceAdapter' do |ss|
@@ -104,7 +104,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'UnityAdsAdapter' do |ss|
      ss.vendored_libraries = 'windmill-sdk-ios/AdNetworks/unity/*.a'
      ss.dependency 'WindmillAd-iOS/WindmillSDK'
-     ss.dependency 'UnityAds', '3.7.2'
+     ss.dependency 'UnityAds', '4.1.0'
   end
 
   spec.subspec 'KSAdapter' do |ss|
@@ -116,7 +116,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'BaiduAdapter' do |ss|
      ss.vendored_libraries = 'windmill-sdk-ios/AdNetworks/baidu/*.a'
      ss.dependency 'WindmillAd-iOS/WindmillSDK'
-     ss.dependency 'BaiduMobAdSDK', '4.843'
+     ss.dependency 'BaiduMobAdSDK', '4.861'
   end
 
   spec.subspec 'KlevinAdapter' do |ss|
