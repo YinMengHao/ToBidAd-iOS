@@ -21,7 +21,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "9.0"
   spec.ios.deployment_target = '9.0'
   spec.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
-  spec.source       = { :http => "https://sdkres.sigmob.cn/windmill/ios/1.4.3_f1015366787a96498b83d38c10761909/windmill_release_ios_1.4.3_20220420.zip" }
+  spec.source       = { :http => "https://sdkres.sigmob.cn/windmill/ios/1.4.3_6c7865f8f5fbd12dc9accf79908f974a/windmill_release_ios_1.4.3_20220420.zip" }
   spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
   spec.requires_arc = true
   spec.default_subspec = 'WindmillSDK'
