@@ -8,20 +8,20 @@
 
 Pod::Spec.new do |spec|
 
-  spec.name         = "WindmillAd-iOS"
-  spec.version      = "1.5.0"
-  spec.summary      = "WindSDK is a SDK from Sigmob providing AD service."
+  spec.name         = 'WindmillAd-iOS'
+  spec.version      = '1.5.0'
+  spec.summary      = 'WindMillSDK is a SDK from Sigmob providing AD service.'
   spec.description      = <<-DESC
   WindmillAd-iOS provides ADs which include native、banner、splash、RewardVideo、intersititial etc.
                        DESC
 
-  spec.homepage     = "http://www.sigmob.com/"
-  spec.license      = { :type => 'MIT', :file => 'LICENSE' }
-  spec.author       = { "Codi" => "codi.zhao@sigmob.com" }
-  spec.platform     = :ios, "9.0"
+  spec.homepage     = 'http://www.sigmob.com/'
+  spec.license      = { :type => 'MIT' }
+  spec.author       = { 'Codi' => 'codi.zhao@sigmob.com' }
+  spec.platform     = :ios, '9.0'
   spec.ios.deployment_target = '9.0'
   spec.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
-  spec.source       = { :http => "https://sdkres.sigmob.cn/windmill/ios/1.5.0_76925c21e2bb26266f97fc63ae978b84/windmill_release_ios_1.5.0_20220519.zip" }
+  spec.source       = { :http => 'https://sdkres.sigmob.cn/windmill/ios/1.5.0_76925c21e2bb26266f97fc63ae978b84/windmill_release_ios_1.5.0_20220519.zip' }
   spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
   spec.requires_arc = true
   spec.default_subspec = 'WindmillSDK'
@@ -48,81 +48,119 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'TouTiaoAdapter' do |ss|
+     ss.ios.deployment_target = '9.0'
      ss.vendored_libraries = 'windmill-sdk-ios/AdNetworks/csj/*.a'
+     ss.vendored_frameworks = 'windmill-sdk-ios/AdNetworks/csj/*.framework'
+     ss.resource = 'windmill-sdk-ios/AdNetworks/csj/*.bundle'
+     ss.preserve_paths = 'windmill-sdk-ios/AdNetworks/csj/*.bundle','windmill-sdk-ios/AdNetworks/csj/*.framework','windmill-sdk-ios/AdNetworks/csj/*.a'
      ss.dependency 'WindmillAd-iOS/WindmillSDK'
-     ss.dependency 'Ads-CN', '4.4.0.7'
+     ss.frameworks = 'UIKit','MapKit','WebKit','MediaPlayer','CoreLocation','AdSupport','CoreMedia','AVFoundation','CoreTelephony','StoreKit','SystemConfiguration','MobileCoreServices','CoreMotion','Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox','ImageIO','QuartzCore','CoreGraphics','CoreText'
+     ss.weak_framework = 'AppTrackingTransparency'
+     ss.libraries = 'c++','resolv','z','sqlite3','bz2','xml2','iconv','c++abi'
   end
 
   spec.subspec 'AdmobAdapter' do |ss|
-     ss.ios.deployment_target = '10.0'
+     ss.ios.deployment_target = '9.0'
      ss.vendored_libraries = 'windmill-sdk-ios/AdNetworks/admob/*.a'
+     ss.vendored_frameworks = 'windmill-sdk-ios/AdNetworks/admob/*.xcframework'
+     ss.preserve_paths = 'windmill-sdk-ios/AdNetworks/admob/*.a', 'windmill-sdk-ios/AdNetworks/admob/*.xcframework'
+     ss.frameworks = "AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","CoreTelephony","CoreVideo","MediaPlayer","MessageUI","MobileCoreServices","QuartzCore","Security","StoreKit","SystemConfiguration"
+     ss.libraries = 'z','sqlite3'
      ss.dependency 'WindmillAd-iOS/WindmillSDK'
-     ss.dependency 'Google-Mobile-Ads-SDK', '9.4.0'
   end
 
   spec.subspec 'AppLovinAdapter' do |ss|
+     ss.platform     = :ios, '9.0'
      ss.vendored_libraries = 'windmill-sdk-ios/AdNetworks/applovin/*.a'
+     ss.vendored_frameworks = 'windmill-sdk-ios/AdNetworks/applovin/*.xcframework'
+     ss.resource  = 'windmill-sdk-ios/AdNetworks/applovin/*.bundle'
+     ss.preserve_paths = 'windmill-sdk-ios/AdNetworks/applovin/*'
+     ss.frameworks = "AdSupport","AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","CoreMotion","CoreTelephony","MessageUI","SafariServices","StoreKit","SystemConfiguration","UIKit","WebKit"
+     ss.weak_framework = 'AppTrackingTransparency'
+     ss.libraries = "z","sqlite3","xml2"
      ss.dependency 'WindmillAd-iOS/WindmillSDK'
-     ss.dependency 'AppLovinSDK', '11.3.3'
   end
 
   spec.subspec 'MintegralAdapter' do |ss|
+     ss.platform     = :ios, '9.0'
      ss.vendored_libraries = 'windmill-sdk-ios/AdNetworks/mintegral_global/*.a'
+     ss.vendored_frameworks = 'windmill-sdk-ios/AdNetworks/mintegral_global/*.xcframework'
+     ss.preserve_paths = 'windmill-sdk-ios/AdNetworks/mintegral_global/*'
+     ss.frameworks = "SystemConfiguration","CoreGraphics","Foundation","UIKit","AdSupport","StoreKit","QuartzCore","CoreTelephony","MobileCoreServices","Accelerate","AVFoundation","WebKit"
+     ss.weak_framework = 'AppTrackingTransparency'
+     ss.libraries = 'z'
      ss.dependency 'WindmillAd-iOS/WindmillSDK'
-     ss.dependency 'MintegralAdSDK/SplashAd', '7.1.3.0'
-     ss.dependency 'MintegralAdSDK/BidSplashAd', '7.1.3.0'
-     ss.dependency 'MintegralAdSDK/InterstitialAd', '7.1.3.0'
-     ss.dependency 'MintegralAdSDK/InterstitialVideoAd', '7.1.3.0'
-     ss.dependency 'MintegralAdSDK/BidInterstitialVideoAd', '7.1.3.0'
-     ss.dependency 'MintegralAdSDK/NewInterstitialAd', '7.1.3.0'
-     ss.dependency 'MintegralAdSDK/BidNewInterstitialAd', '7.1.3.0'
-     ss.dependency 'MintegralAdSDK/RewardVideoAd', '7.1.3.0'
-     ss.dependency 'MintegralAdSDK/BidRewardVideoAd', '7.1.3.0'
-     ss.dependency 'MintegralAdSDK/BannerAd', '7.1.3.0'
-     ss.dependency 'MintegralAdSDK/BidBannerAd', '7.1.3.0'
   end
 
   spec.subspec 'GDTAdapter' do |ss|
-     ss.vendored_libraries = 'windmill-sdk-ios/AdNetworks/gdt/*.a'
+     ss.platform     = :ios, '9.0'
+     ss.vendored_libraries = 'windmill-sdk-ios/AdNetworks/gdt/*.a', 'windmill-sdk-ios/AdNetworks/gdt/lib/*.a'
+     ss.source_files = 'windmill-sdk-ios/AdNetworks/gdt/lib/*.h'
+     ss.preserve_paths = 'windmill-sdk-ios/AdNetworks/gdt/*'
+     ss.frameworks = "StoreKit","Security","CoreTelephony","AdSupport","CoreLocation","QuartzCore","SystemConfiguration","AVFoundation"
+     ss.weak_framework = 'WebKit'
+     ss.libraries = 'z', 'xml2'
      ss.dependency 'WindmillAd-iOS/WindmillSDK'
-     ss.dependency 'GDTMobSDK', '4.13.65'
   end
 
   spec.subspec 'IronSourceAdapter' do |ss|
+     ss.platform     = :ios, '9.0'
      ss.vendored_libraries = 'windmill-sdk-ios/AdNetworks/ironSource/*.a'
+     ss.vendored_frameworks = 'windmill-sdk-ios/AdNetworks/ironSource/*.xcframework'
+     ss.preserve_paths = 'windmill-sdk-ios/AdNetworks/ironSource/*'
+     ss.frameworks = "AdSupport","AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreLocation","CoreMedia","CoreTelephony","CoreVideo","Foundation","MobileCoreServices","QuartzCore","Security","StoreKit","SystemConfiguration"
+     ss.libraries = "z"
      ss.dependency 'WindmillAd-iOS/WindmillSDK'
-     ss.dependency 'IronSourceSDK', '7.2.1.2'
   end
 
   spec.subspec 'VungleAdapter' do |ss|
-     ss.ios.deployment_target = '10.0'
+     ss.platform     = :ios, '10.0'
      ss.vendored_libraries = 'windmill-sdk-ios/AdNetworks/vungle/*.a'
+     ss.vendored_frameworks = 'windmill-sdk-ios/AdNetworks/vungle/*.xcframework'
+     ss.preserve_paths = 'windmill-sdk-ios/AdNetworks/vungle/*'
+     ss.frameworks = "AdSupport","AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","MediaPlayer","QuartzCore","StoreKit","SystemConfiguration"
+     ss.weak_frameworks = "WebKit","UIKit","Foundation"
+     ss.libraries = "z"
      ss.dependency 'WindmillAd-iOS/WindmillSDK'
-     ss.dependency 'VungleSDK-iOS', '6.10.6'
   end
 
   spec.subspec 'UnityAdsAdapter' do |ss|
+     ss.platform     = :ios, '9.0'
      ss.vendored_libraries = 'windmill-sdk-ios/AdNetworks/unity/*.a'
+     ss.vendored_frameworks = 'windmill-sdk-ios/AdNetworks/unity/*.xcframework'
+     ss.preserve_paths = 'windmill-sdk-ios/AdNetworks/unity/*'
      ss.dependency 'WindmillAd-iOS/WindmillSDK'
-     ss.dependency 'UnityAds', '4.2.0'
   end
 
   spec.subspec 'KSAdapter' do |ss|
+     ss.platform     = :ios, '9.0'
      ss.vendored_libraries = 'windmill-sdk-ios/AdNetworks/kuaishou/*.a'
+     ss.vendored_frameworks = 'windmill-sdk-ios/AdNetworks/kuaishou/*.xcframework'
+     ss.preserve_paths = 'windmill-sdk-ios/AdNetworks/kuaishou/*'
+     ss.frameworks = "Foundation","UIKit","MobileCoreServices","CoreGraphics","Security","SystemConfiguration","CoreTelephony","AdSupport","CoreData","StoreKit","AVFoundation","MediaPlayer","CoreMedia","WebKit","Accelerate","CoreLocation","AVKit","MessageUI","QuickLook","AudioToolBox","JavaScriptCore","CoreMotion"
+     ss.libraries = "z","resolv.9","sqlite3","c++","c++abi"
      ss.dependency 'WindmillAd-iOS/WindmillSDK'
-     ss.dependency 'KSAdSDK', '3.3.23'
   end
 
   spec.subspec 'BaiduAdapter' do |ss|
+     ss.platform     = :ios, '9.0'
      ss.vendored_libraries = 'windmill-sdk-ios/AdNetworks/baidu/*.a'
+     ss.vendored_frameworks = 'windmill-sdk-ios/AdNetworks/baidu/*.framework'
+     ss.resource  = 'windmill-sdk-ios/AdNetworks/baidu/*.bundle'
+     ss.preserve_paths = 'windmill-sdk-ios/AdNetworks/baidu/*'
+     ss.frameworks = "CoreLocation","SystemConfiguration","CoreGraphics","CoreMotion","CoreTelephony","AdSupport","SystemConfiguration","QuartzCore","WebKit","MessageUI","SafariServices","AVFoundation","EventKit","QuartzCore","CoreMedia","StoreKit"
+     ss.libraries = "c++"
      ss.dependency 'WindmillAd-iOS/WindmillSDK'
-     ss.dependency 'BaiduMobAdSDK', '4.861'
   end
 
   spec.subspec 'KlevinAdapter' do |ss|
+     ss.platform     = :ios, '9.0'
      ss.vendored_libraries = 'windmill-sdk-ios/AdNetworks/klevin/*.a'
+     ss.vendored_frameworks = 'windmill-sdk-ios/AdNetworks/klevin/*.framework'
+     ss.preserve_paths = 'windmill-sdk-ios/AdNetworks/klevin/*'
+     ss.frameworks = "StoreKit","SystemConfiguration","CoreTelephony","AVKit","AVFoundation","CoreMedia"
+     ss.weak_frameworks = "AdSupport","AppTrackingTransparency","WebKit"
      ss.dependency 'WindmillAd-iOS/WindmillSDK'
-     ss.dependency 'KlevinAdSDK', '2.7.2.206'
   end
   
 end
