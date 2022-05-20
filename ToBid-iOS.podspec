@@ -21,7 +21,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, '9.0'
   spec.ios.deployment_target = '9.0'
   spec.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
-  spec.source       = { :http => 'https://sigsdk.happyelements.net/ciservice/tobid_ios/1.5/tobid_release_ios_1.5.0_20220520.zip' }
+  spec.source       = { :http => 'https://sdkres.sigmob.cn/ToBid/ios/1.5.0_20578daa63865ca997db0ca66825db02/tobid_release_ios_1.5.0_20220520.zip' }
   spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
   spec.requires_arc = true
   spec.default_subspec = 'ToBidSDK'
