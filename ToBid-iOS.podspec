@@ -21,7 +21,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, '9.0'
   spec.ios.deployment_target = '9.0'
   spec.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
-  spec.source       = { :http => 'http://sdkres.sigmob.cn/ToBid/ios/1.6.0_f2ae67dc6ab3570a3164d6b8b8df50d2/tobid_release_ios_1.6.0_20220622.zip' }
+  spec.source       = { :http => 'http://sdkres.sigmob.cn/ToBid/ios/1.6.0_5b6a30b08d0241f3a5519ee0319d4ea2/tobid_release_ios_1.6.0_20220624.zip' }
   spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
   spec.requires_arc = true
   spec.default_subspec = 'ToBidSDK'
