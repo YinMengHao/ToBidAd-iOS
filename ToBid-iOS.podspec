@@ -54,9 +54,9 @@ Pod::Spec.new do |spec|
      ss.resource = 'tobid-sdk-ios/AdNetworks/csj/*.bundle'
      ss.preserve_paths = 'tobid-sdk-ios/AdNetworks/csj/*.bundle','tobid-sdk-ios/AdNetworks/csj/*.framework','tobid-sdk-ios/AdNetworks/csj/*.a'
      ss.dependency 'ToBid-iOS/ToBidSDK'
-     ss.frameworks = 'UIKit','MapKit','WebKit','MediaPlayer','CoreLocation','AdSupport','CoreMedia','AVFoundation','CoreTelephony','StoreKit','SystemConfiguration','MobileCoreServices','CoreMotion','Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox','ImageIO','QuartzCore','CoreGraphics','CoreText'
-     ss.weak_framework = 'AppTrackingTransparency'
-     ss.libraries = 'c++','resolv','z','sqlite3','bz2','xml2','iconv','c++abi'
+     ss.frameworks = 'UIKit', 'MapKit', 'WebKit', 'MediaPlayer', 'CoreLocation', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox','ImageIO','QuartzCore','CoreGraphics','CoreText'
+     ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck'
+     ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi'
   end
 
   spec.subspec 'AdmobAdapter' do |ss|
