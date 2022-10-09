@@ -20,9 +20,13 @@ Pod::Spec.new do |spec|
   spec.author       = { 'Codi' => 'codi.zhao@sigmob.com' }
   spec.platform     = :ios, '9.0'
   spec.ios.deployment_target = '9.0'
-  spec.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
+  
   spec.source       = { :http => 'https://sdkres.sigmob.cn/ToBid/ios/1.11.0_c4361664be25c6a0cafc101e427e728e/tobid_release_ios_1.11.0_20221009.zip' }
-  spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
+  
+  spec.xcconfig = { 'VALID_ARCHS' => 'armv7 arm64', 'OTHER_LDFLAGS' => ['-lObjC'] }
+  spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+
   spec.requires_arc = true
   spec.default_subspec = 'ToBidSDK'
 
