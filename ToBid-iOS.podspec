@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = 'ToBid-iOS'
-  spec.version      = '1.10.0'
+  spec.version      = '1.11.0'
   spec.summary      = 'ToBid-iOS is a SDK from Sigmob providing AD service.'
   spec.description      = <<-DESC
   ToBid-iOS provides ADs which include native、banner、splash、RewardVideo、Interstitial etc.
@@ -21,7 +21,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, '9.0'
   spec.ios.deployment_target = '9.0'
   spec.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
-  spec.source       = { :http => 'https://sdkres.sigmob.cn/ToBid/ios/1.10.0_db24f0e386c244437630bfc9aac1483a/tobid_release_ios_1.10.0_20220923.zip' }
+  spec.source       = { :http => 'https://sdkres.sigmob.cn/ToBid/ios/1.11.0_c4361664be25c6a0cafc101e427e728e/tobid_release_ios_1.11.0_20221009.zip' }
   spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
   spec.requires_arc = true
   spec.default_subspec = 'ToBidSDK'
@@ -54,7 +54,7 @@ Pod::Spec.new do |spec|
      ss.resource = 'tobid-sdk-ios/AdNetworks/csj/*.bundle'
      ss.preserve_paths = 'tobid-sdk-ios/AdNetworks/csj/*.bundle','tobid-sdk-ios/AdNetworks/csj/*.framework','tobid-sdk-ios/AdNetworks/csj/*.a'
      ss.dependency 'ToBid-iOS/ToBidSDK'
-     ss.frameworks = 'UIKit', 'MapKit', 'WebKit', 'MediaPlayer', 'CoreLocation', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox','ImageIO','QuartzCore','CoreGraphics','CoreText'
+     ss.frameworks = 'UIKit', 'MapKit', 'WebKit', 'MediaPlayer', 'CoreLocation', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox','ImageIO','QuartzCore','CoreGraphics','CoreText',"DeviceCheck"
      ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck'
      ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi'
   end
@@ -160,6 +160,16 @@ Pod::Spec.new do |spec|
      ss.preserve_paths = 'tobid-sdk-ios/AdNetworks/klevin/*'
      ss.frameworks = "StoreKit","SystemConfiguration","CoreTelephony","AVKit","AVFoundation","CoreMedia"
      ss.weak_frameworks = "AdSupport","AppTrackingTransparency","WebKit"
+     ss.dependency 'ToBid-iOS/ToBidSDK'
+  end
+
+  spec.subspec 'AdScopeAdapter' do |ss|
+     ss.platform     = :ios, '9.0'
+     ss.vendored_libraries = 'tobid-sdk-ios/AdNetworks/adscope/*.a'
+     ss.vendored_frameworks = 'tobid-sdk-ios/AdNetworks/adscope/*.framework'
+     ss.preserve_paths = 'tobid-sdk-ios/AdNetworks/adscope/*'
+     ss.frameworks = "AdSupport","AVFoundation","AVKit","Accelerate","AudioToolbox","AppTrackingTransparency","CoreData","CoreLocation","CoreMedia","CoreMotion","CoreGraphics","CoreTelephony","CoreImage","CoreText","Foundation","MediaPlayer","MessageUI","MobileCoreServices","MapKit","QuartzCore","QuickLook","SystemConfiguration","Security","StoreKit","WebKit","UIKit","ImageIO","SafariServices","JavaScriptCore","DeviceCheck"
+     ss.libraries = "z","c++","sqlite3","xml2","bz2","c++abi","resolv.9","iconv","c"
      ss.dependency 'ToBid-iOS/ToBidSDK'
   end
   
