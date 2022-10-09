@@ -166,6 +166,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'AdScopeAdapter' do |ss|
      ss.platform     = :ios, '9.0'
+     spec.xcconfig = { 'VALID_ARCHS' => 'armv7 arm64'}
      ss.vendored_libraries = 'tobid-sdk-ios/AdNetworks/adscope/*.a'
      ss.vendored_frameworks = 'tobid-sdk-ios/AdNetworks/adscope/*.framework'
      ss.preserve_paths = 'tobid-sdk-ios/AdNetworks/adscope/*'
