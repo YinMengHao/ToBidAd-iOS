@@ -126,12 +126,13 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'UnityAdsAdapter' do |ss|
-     ss.platform     = :ios, '9.0'
+     ss.platform = :ios
+     ss.ios.deployment_target = '9.0'
      ss.vendored_libraries = 'tobid-sdk-ios/AdNetworks/unity/*.a'
-     ss.vendored_frameworks = 'tobid-sdk-ios/AdNetworks/unity/*.xcframework'
+     # ss.ios.vendored_frameworks = 'tobid-sdk-ios/AdNetworks/unity/UnityAds.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios/AdNetworks/unity/*'
      ss.dependency 'ToBid-iOS/ToBidSDK'
-     ss.swift_version = '5.0'
+     ss.dependency 'UnityAds', '4.4.1'
   end
 
   spec.subspec 'KSAdapter' do |ss|
