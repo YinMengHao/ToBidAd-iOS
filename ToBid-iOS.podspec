@@ -132,7 +132,7 @@ Pod::Spec.new do |spec|
      # ss.ios.vendored_frameworks = 'tobid-sdk-ios/AdNetworks/unity/UnityAds.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios/AdNetworks/unity/*'
      ss.dependency 'ToBid-iOS/ToBidSDK'
-     ss.dependency 'UnityAds', '4.4.1'
+     ss.dependency 'UnityAds', '4.5.0'
   end
 
   spec.subspec 'KSAdapter' do |ss|
