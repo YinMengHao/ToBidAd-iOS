@@ -34,18 +34,20 @@ Pod::Spec.new do |spec|
     ss.libraries = 'c++', 'z', 'sqlite3'
     ss.vendored_frameworks = ['tobid-sdk-ios/Core/WindMillSDK.xcframework']
     ss.preserve_paths = 'tobid-sdk-ios/Core/WindMillSDK.xcframework'
-    ss.dependency 'ToBid-iOS/SigmobAd-iOS'
-  end
-
-  spec.subspec 'SigmobAd-iOS' do |ss|
-     ss.vendored_frameworks = ['tobid-sdk-ios/Core/WindSDK.xcframework']
-     ss.preserve_paths = 'tobid-sdk-ios/Core/WindSDK.xcframework'
-     ss.dependency 'ToBid-iOS/WindFoundation'
+    ss.dependency 'ToBid-iOS/WindFoundation'
   end
 
   spec.subspec 'WindFoundation' do |ss|
      ss.vendored_frameworks = ['tobid-sdk-ios/Core/WindFoundation.xcframework']
      ss.preserve_paths = 'tobid-sdk-ios/Core/WindFoundation.xcframework'
+  end
+
+  spec.subspec 'SigmobAd-iOS' do |ss|
+     ss.ios.deployment_target = '9.0'
+     ss.vendored_libraries = 'tobid-sdk-ios/AdNetworks/sigmob/*.a'
+     ss.vendored_frameworks = ['tobid-sdk-ios/AdNetworks/sigmob/WindSDK.xcframework']
+     ss.preserve_paths = 'tobid-sdk-ios/AdNetworks/sigmob/WindSDK.xcframework','tobid-sdk-ios/AdNetworks/sigmob/*.a'
+     ss.dependency 'ToBid-iOS/ToBidSDK'
   end
 
   spec.subspec 'TouTiaoAdapter' do |ss|
