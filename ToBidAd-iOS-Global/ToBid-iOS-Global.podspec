@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = 'ToBid-iOS-Global'
-  spec.version      = '2.10.0'
+  spec.version      = '2.10.01'
   spec.summary      = 'ToBid-iOS is a SDK from Sigmob providing AD service.'
   spec.description      = <<-DESC
   ToBid-iOS provides ADs which include native、banner、splash、RewardVideo、Interstitial etc.
@@ -49,13 +49,14 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'AdmobAdapter' do |ss|
-     ss.ios.deployment_target = '9.0'
+     ss.ios.deployment_target = '10.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/admob/*.a'
-     ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/admob/*.xcframework'
+     # ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/admob/*.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/admob/**/*'
-     ss.frameworks = "AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","CoreTelephony","CoreVideo","MediaPlayer","MessageUI","MobileCoreServices","QuartzCore","Security","StoreKit","SystemConfiguration"
-     ss.libraries = 'z','sqlite3'
+     # ss.frameworks = "AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","CoreTelephony","CoreVideo","MediaPlayer","MessageUI","MobileCoreServices","QuartzCore","Security","StoreKit","SystemConfiguration"
+     # ss.libraries = 'z','sqlite3'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
+     ss.dependency 'Google-Mobile-Ads-SDK', '10.4.0' 
   end
 
   spec.subspec 'AppLovinAdapter' do |ss|
