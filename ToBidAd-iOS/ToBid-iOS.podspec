@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = 'ToBid-iOS'
-  spec.version      = '2.12.2'
+  spec.version      = '3.0.0'
   spec.summary      = 'ToBid-iOS is a SDK from Sigmob providing AD service.'
   spec.description      = <<-DESC
   ToBid-iOS provides ADs which include native、banner、splash、RewardVideo、Interstitial etc.
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.author       = { 'Codi' => 'codi.zhao@sigmob.com' }
   spec.platform     = :ios, '9.0'
   spec.ios.deployment_target = '9.0'
-  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/2.12.2_23e87896150cd3741cfea0e91b93929c/tobid_release_ios_cn_2.12.2_20230807.zip" }
+  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/3.0.0_c933e5520c0ce0f38cb2e2c4dc3c1b7d/tobid_release_ios_cn_3.0.0_20231009.zip" }
   spec.xcconfig = { 'VALID_ARCHS' => 'armv7 arm64 x86_64','VALID_ARCHS[sdk=iphoneos*]' => 'armv7 arm64','VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64', 'OTHER_LDFLAGS' => ['-lObjC'] }
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
@@ -88,7 +88,7 @@ Pod::Spec.new do |spec|
      # ss.ios.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/unity/UnityAds.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/unity/**/*'
      ss.dependency 'ToBid-iOS/ToBidSDK'
-     ss.dependency 'UnityAds', '4.7.1'
+     ss.dependency 'UnityAds', '4.8.0'
   end
 
   spec.subspec 'KSAdapter' do |ss|
@@ -133,14 +133,14 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'AdmobAdapter' do |ss|
-     ss.ios.deployment_target = '10.0'
+     ss.ios.deployment_target = '11.0'
      ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/admob/*.a'
      # ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/admob/*.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/admob/**/*'
      # ss.frameworks = "AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","CoreTelephony","CoreVideo","MediaPlayer","MessageUI","MobileCoreServices","QuartzCore","Security","StoreKit","SystemConfiguration"
      # ss.libraries = 'z','sqlite3'
      ss.dependency 'ToBid-iOS/ToBidSDK'
-     ss.dependency 'Google-Mobile-Ads-SDK', '10.4.0' 
+     ss.dependency 'Google-Mobile-Ads-SDK', '10.12.0'
   end
   
 end
