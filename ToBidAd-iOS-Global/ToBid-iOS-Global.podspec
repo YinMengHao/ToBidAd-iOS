@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = 'ToBid-iOS-Global'
-  spec.version      = '2.11.1'
+  spec.version      = '3.0.0'
   spec.summary      = 'ToBid-iOS is a SDK from Sigmob providing AD service.'
   spec.description      = <<-DESC
   ToBid-iOS provides ADs which include native、banner、splash、RewardVideo、Interstitial etc.
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.author       = { 'Codi' => 'codi.zhao@sigmob.com' }
   spec.platform     = :ios, '9.0'
   spec.ios.deployment_target = '9.0'
-  spec.source       = { :http => 'https://sdkres.sigmob.cn/ToBid/ios/2.11.1_430f46e345eff90dfd72d6a37cea50d8/tobid_release_ios_global_2.11.1_20230628.zip' }
+  spec.source       = { :http => 'https://sdkres.sigmob.cn/ToBid/ios/3.0.0_bb5403908e5687fa0442c3943e8fc2e7/tobid_release_ios_global_3.0.0_20231010.zip' }
   spec.xcconfig = { 'VALID_ARCHS' => 'armv7 arm64 x86_64','VALID_ARCHS[sdk=iphoneos*]' => 'armv7 arm64','VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64', 'OTHER_LDFLAGS' => ['-lObjC'] }
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
@@ -39,24 +39,26 @@ Pod::Spec.new do |spec|
   spec.subspec 'PangleAdapter' do |ss|
      ss.ios.deployment_target = '9.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/pangle/*.a'
-     ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/pangle/*.xcframework'
-     ss.resource = 'tobid-sdk-ios-global/AdNetworks/pangle/*.bundle'
-     ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/pangle/**/*'
-     ss.frameworks = 'UIKit', 'MapKit', 'WebKit', 'MediaPlayer', 'CoreLocation', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox','ImageIO','QuartzCore','CoreGraphics','CoreText'
-     ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck', 'CoreML'
-     ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi'
+   #   ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/pangle/*.xcframework'
+   #   ss.resource = 'tobid-sdk-ios-global/AdNetworks/pangle/*.bundle'
+   #   ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/pangle/**/*'
+   #   ss.frameworks = "UIKit", "WebKit", "MediaPlayer","AdSupport","CoreMedia","AVFoundation","CoreTelephony","StoreKit","SystemConfiguration","MobileCoreServices","CoreMotion","Accelerate","AudioToolbox","JavaScriptCore","Security","AudioToolbox","CoreGraphics","CoreAudioTypes"
+   #   ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck', 'CoreML'
+   #   ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
+     ss.dependency 'Ads-Global', '5.5.0.5' 
+
   end
 
   spec.subspec 'AdmobAdapter' do |ss|
-     ss.ios.deployment_target = '10.0'
+     ss.ios.deployment_target = '11.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/admob/*.a'
      # ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/admob/*.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/admob/**/*'
      # ss.frameworks = "AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","CoreTelephony","CoreVideo","MediaPlayer","MessageUI","MobileCoreServices","QuartzCore","Security","StoreKit","SystemConfiguration"
      # ss.libraries = 'z','sqlite3'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
-     ss.dependency 'Google-Mobile-Ads-SDK', '10.4.0' 
+     ss.dependency 'Google-Mobile-Ads-SDK', '10.12.0' 
   end
 
   spec.subspec 'AppLovinAdapter' do |ss|
@@ -110,7 +112,7 @@ Pod::Spec.new do |spec|
      # ss.ios.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/unity/UnityAds.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/unity/**/*'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
-     ss.dependency 'UnityAds', '4.7.1'
+     ss.dependency 'UnityAds', '4.8.0'
   end
   
   spec.subspec 'TouTiaoAdapter' do |ss|
