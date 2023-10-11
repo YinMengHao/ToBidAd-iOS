@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = 'ToBid-iOS'
-  spec.version      = '3.0.0'
+  spec.version      = '3.0.0.1'
   spec.summary      = 'ToBid-iOS is a SDK from Sigmob providing AD service.'
   spec.description      = <<-DESC
   ToBid-iOS provides ADs which include native、banner、splash、RewardVideo、Interstitial etc.
@@ -142,5 +142,27 @@ Pod::Spec.new do |spec|
      ss.dependency 'ToBid-iOS/ToBidSDK'
      ss.dependency 'Google-Mobile-Ads-SDK', '10.12.0'
   end
+
+  spec.subspec 'AppLovinAdapter' do |ss|
+   ss.platform     = :ios, '9.0'
+   ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/applovin/*.a'
+   ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/applovin/*.xcframework'
+   ss.resource  = 'tobid-sdk-ios-cn/AdNetworks/applovin/*.bundle'
+   ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/applovin/**/*'
+   ss.frameworks = "AdSupport","AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","CoreMotion","CoreTelephony","MessageUI","SafariServices","StoreKit","SystemConfiguration","UIKit","WebKit"
+   ss.weak_framework = 'AppTrackingTransparency'
+   ss.libraries = "z","sqlite3","xml2"
+   ss.dependency 'ToBid-iOS/ToBidSDK'
+ end
+   
+   spec.subspec 'IronSourceAdapter' do |ss|
+      ss.platform     = :ios, '9.0'
+      ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/ironSource/*.a'
+      ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/ironSource/*.xcframework'
+      ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/ironSource/**/*'
+      ss.frameworks = "AdSupport","AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreLocation","CoreMedia","CoreTelephony","CoreVideo","Foundation","MobileCoreServices","QuartzCore","Security","StoreKit","SystemConfiguration"
+      ss.libraries = "z"
+      ss.dependency 'ToBid-iOS/ToBidSDK'
+   end
   
 end
