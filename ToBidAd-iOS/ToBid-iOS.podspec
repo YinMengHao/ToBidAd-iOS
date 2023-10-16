@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = 'ToBid-iOS'
-  spec.version      = '3.0.0.1'
+  spec.version      = '3.1.0'
   spec.summary      = 'ToBid-iOS is a SDK from Sigmob providing AD service.'
   spec.description      = <<-DESC
   ToBid-iOS provides ADs which include native、banner、splash、RewardVideo、Interstitial etc.
@@ -37,7 +37,7 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'TouTiaoAdapter' do |ss|
-     ss.ios.deployment_target = '9.0'
+     ss.ios.deployment_target = '10.0'
      ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/csj/*.a'
      ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/csj/*.xcframework'
      ss.resource = 'tobid-sdk-ios-cn/AdNetworks/csj/*.bundle'
@@ -47,6 +47,18 @@ Pod::Spec.new do |spec|
      ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi'
      ss.dependency 'ToBid-iOS/ToBidSDK'
   end
+
+  spec.subspec 'CSJMediationAdapter' do |ss|
+    ss.ios.deployment_target = '10.0'
+    ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/gromore/*.a'
+    ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/gromore/*.xcframework'
+    ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/gromore/**/*'
+    ss.frameworks = 'UIKit', 'MapKit', 'WebKit', 'MediaPlayer', 'CoreLocation', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox','ImageIO','QuartzCore','CoreGraphics','CoreText',"DeviceCheck"
+    ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck'
+    ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi'
+    ss.dependency 'ToBid-iOS/TouTiaoAdapter'
+  end
+
 
   spec.subspec 'MintegralAdapter' do |ss|
      ss.platform     = :ios, '9.0'
