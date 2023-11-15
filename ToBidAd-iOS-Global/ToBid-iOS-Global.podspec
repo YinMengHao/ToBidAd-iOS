@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = 'ToBid-iOS-Global'
-  spec.version      = '3.1.0'
+  spec.version      = '3.2.0'
   spec.summary      = 'ToBid-iOS is a SDK from Sigmob providing AD service.'
   spec.description      = <<-DESC
   ToBid-iOS provides ADs which include native、banner、splash、RewardVideo、Interstitial etc.
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.author       = { 'Codi' => 'codi.zhao@sigmob.com' }
   spec.platform     = :ios, '9.0'
   spec.ios.deployment_target = '9.0'
-  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/3.1.0_2014db352dc2a9ecb51d5efd1d6f9cef/tobid_release_ios_global_3.1.0_20231016.zip" }
+  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/3.2.0_195f0c9fb1578cbce6edc4a32b6620aa/tobid_release_ios_global_3.2.0_20231115.zip" }
   spec.xcconfig = { 'VALID_ARCHS' => 'armv7 arm64 x86_64','VALID_ARCHS[sdk=iphoneos*]' => 'armv7 arm64','VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64', 'OTHER_LDFLAGS' => ['-lObjC'] }
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
@@ -112,7 +112,7 @@ Pod::Spec.new do |spec|
      # ss.ios.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/unity/UnityAds.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/unity/**/*'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
-     ss.dependency 'UnityAds', '4.8.0'
+     ss.dependency 'UnityAds', '4.9.2'
   end
   
   spec.subspec 'TouTiaoAdapter' do |ss|
@@ -189,6 +189,14 @@ Pod::Spec.new do |spec|
      ss.frameworks = "AdSupport","AVFoundation","AVKit","Accelerate","AudioToolbox","AppTrackingTransparency","CoreData","CoreLocation","CoreMedia","CoreMotion","CoreGraphics","CoreTelephony","CoreImage","CoreText","Foundation","MediaPlayer","MessageUI","MobileCoreServices","MapKit","QuartzCore","QuickLook","SystemConfiguration","Security","StoreKit","WebKit","UIKit","ImageIO","SafariServices","JavaScriptCore","DeviceCheck"
      ss.libraries = "z","c++","sqlite3","xml2","bz2","c++abi","resolv.9","iconv","c"
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
+  end
+
+  spec.subspec 'InMobiAdapter' do |ss|
+   ss.platform     = :ios, '11.0'
+   ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/inMobi/*.a'
+   ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/inMobi/**/*'
+   ss.dependency 'InMobiSDK', '10.5.8'
+   ss.dependency 'ToBid-iOS/ToBidSDK'
   end
 
 

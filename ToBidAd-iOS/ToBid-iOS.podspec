@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = 'ToBid-iOS'
-  spec.version      = '3.1.0'
+  spec.version      = '3.2.0'
   spec.summary      = 'ToBid-iOS is a SDK from Sigmob providing AD service.'
   spec.description      = <<-DESC
   ToBid-iOS provides ADs which include native、banner、splash、RewardVideo、Interstitial etc.
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.author       = { 'Codi' => 'codi.zhao@sigmob.com' }
   spec.platform     = :ios, '9.0'
   spec.ios.deployment_target = '9.0'
-  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/3.1.0_0b35da65ca3942ad9fa1470288722682/tobid_release_ios_cn_3.1.0_20231016.zip" }
+  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/3.2.0_91f763cc552e4dac495fb2f1a6e001be/tobid_release_ios_cn_3.2.0_20231115.zip" }
   spec.xcconfig = { 'VALID_ARCHS' => 'armv7 arm64 x86_64','VALID_ARCHS[sdk=iphoneos*]' => 'armv7 arm64','VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64', 'OTHER_LDFLAGS' => ['-lObjC'] }
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
@@ -100,7 +100,7 @@ Pod::Spec.new do |spec|
      # ss.ios.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/unity/UnityAds.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/unity/**/*'
      ss.dependency 'ToBid-iOS/ToBidSDK'
-     ss.dependency 'UnityAds', '4.8.0'
+     ss.dependency 'UnityAds', '4.9.2'
   end
 
   spec.subspec 'KSAdapter' do |ss|
