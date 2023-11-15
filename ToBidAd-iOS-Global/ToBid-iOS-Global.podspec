@@ -196,7 +196,7 @@ Pod::Spec.new do |spec|
    ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/inMobi/*.a'
    ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/inMobi/**/*'
    ss.dependency 'InMobiSDK', '10.5.8'
-   ss.dependency 'ToBid-iOS/ToBidSDK'
+   ss.dependency 'ToBid-iOS-Global/ToBidSDK'
   end
 
 
