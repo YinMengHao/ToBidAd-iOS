@@ -95,7 +95,7 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'UnityAdsAdapter' do |ss|
      ss.platform = :ios
-     ss.ios.deployment_target = '9.0'
+     ss.ios.deployment_target = '10.0'
      ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/unity/*.a'
      # ss.ios.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/unity/UnityAds.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/unity/**/*'
@@ -168,7 +168,7 @@ Pod::Spec.new do |spec|
  end
    
    spec.subspec 'IronSourceAdapter' do |ss|
-      ss.platform     = :ios, '9.0'
+      ss.platform     = :ios, '10.0'
       ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/ironSource/*.a'
       ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/ironSource/*.xcframework'
       ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/ironSource/**/*'
