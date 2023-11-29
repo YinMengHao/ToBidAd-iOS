@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.author       = { 'Codi' => 'codi.zhao@sigmob.com' }
   spec.platform     = :ios, '9.0'
   spec.ios.deployment_target = '9.0'
-  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/3.2.2_3f4690aa43de9c09935c1e933560f04d/tobid_release_ios_global_3.2.2_20231129.zip" }
+  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/3.2.2_c9ba72563a0477835b092b6de41f4ab0/tobid_release_ios_global_3.2.2_20231129.zip" }
   spec.xcconfig = { 'VALID_ARCHS' => 'armv7 arm64 x86_64','VALID_ARCHS[sdk=iphoneos*]' => 'armv7 arm64','VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64', 'OTHER_LDFLAGS' => ['-lObjC'] }
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
