@@ -62,14 +62,10 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'AppLovinAdapter' do |ss|
-     ss.platform     = :ios, '9.0'
+     ss.platform     = :ios, '11.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/applovin/*.a'
-     ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/applovin/*.xcframework'
-     ss.resource  = 'tobid-sdk-ios-global/AdNetworks/applovin/*.bundle'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/applovin/**/*'
-     ss.frameworks = "AdSupport","AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","CoreMotion","CoreTelephony","MessageUI","SafariServices","StoreKit","SystemConfiguration","UIKit","WebKit"
-     ss.weak_framework = 'AppTrackingTransparency'
-     ss.libraries = "z","sqlite3","xml2"
+     ss.dependency 'AppLovinSDK', '12.0.0'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
   end
 
