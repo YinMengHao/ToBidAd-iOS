@@ -46,7 +46,7 @@ Pod::Spec.new do |spec|
    #   ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck', 'CoreML'
    #   ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
-     ss.dependency 'Ads-Global', '5.5.0.5' 
+     ss.dependency 'Ads-Global', '5.7.0.3'
 
   end
 
@@ -58,14 +58,14 @@ Pod::Spec.new do |spec|
      # ss.frameworks = "AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","CoreTelephony","CoreVideo","MediaPlayer","MessageUI","MobileCoreServices","QuartzCore","Security","StoreKit","SystemConfiguration"
      # ss.libraries = 'z','sqlite3'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
-     ss.dependency 'Google-Mobile-Ads-SDK', '10.13.0'
+     ss.dependency 'Google-Mobile-Ads-SDK', '10.14.0'
   end
 
   spec.subspec 'AppLovinAdapter' do |ss|
      ss.platform     = :ios, '11.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/applovin/*.a'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/applovin/**/*'
-     ss.dependency 'AppLovinSDK', '12.0.0'
+     ss.dependency 'AppLovinSDK', '12.1.0'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
   end
 
@@ -167,6 +167,16 @@ Pod::Spec.new do |spec|
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
   end
 
+  spec.subspec 'MSAdAdapter' do |ss|
+     ss.platform     = :ios, '10.0'
+     ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/meishu/*.a'
+     ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/meishu/*.framework'
+     ss.resource  = 'tobid-sdk-ios-global/AdNetworks/meishu/*.bundle'
+     ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/meishu/**/*'
+     ss.frameworks = "AdSupport","AVFoundation","CoreLocation","CoreMotion","CoreImage","CoreTelephony","Foundation","Security","StoreKit","UIKit","WebKit"
+     ss.dependency 'ToBid-iOS-Global/ToBidSDK'
+  end
+  
   spec.subspec 'KlevinAdapter' do |ss|
      ss.platform     = :ios, '9.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/klevin/*.a'

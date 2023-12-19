@@ -124,6 +124,16 @@ Pod::Spec.new do |spec|
      ss.dependency 'ToBid-iOS/ToBidSDK'
   end
 
+  spec.subspec 'MSAdAdapter' do |ss|
+     ss.platform     = :ios, '10.0'
+     ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/meishu/*.a'
+     ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/meishu/*.framework'
+     ss.resource  = 'tobid-sdk-ios-cn/AdNetworks/meishu/*.bundle'
+     ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/meishu/**/*'
+     ss.frameworks = "AdSupport","AVFoundation","CoreLocation","CoreMotion","CoreImage","CoreTelephony","Foundation","Security","StoreKit","UIKit","WebKit"
+     ss.dependency 'ToBid-iOS/ToBidSDK'
+  end
+  
   spec.subspec 'KlevinAdapter' do |ss|
      ss.platform     = :ios, '9.0'
      ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/klevin/*.a'
@@ -152,18 +162,15 @@ Pod::Spec.new do |spec|
      # ss.frameworks = "AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","CoreTelephony","CoreVideo","MediaPlayer","MessageUI","MobileCoreServices","QuartzCore","Security","StoreKit","SystemConfiguration"
      # ss.libraries = 'z','sqlite3'
      ss.dependency 'ToBid-iOS/ToBidSDK'
-     ss.dependency 'Google-Mobile-Ads-SDK', '10.12.0'
+     ss.dependency 'Google-Mobile-Ads-SDK', '10.14.0'
   end
 
   spec.subspec 'AppLovinAdapter' do |ss|
    ss.platform     = :ios, '9.0'
    ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/applovin/*.a'
-   ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/applovin/*.xcframework'
-   ss.resource  = 'tobid-sdk-ios-cn/AdNetworks/applovin/*.bundle'
    ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/applovin/**/*'
-   ss.frameworks = "AdSupport","AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","CoreMotion","CoreTelephony","MessageUI","SafariServices","StoreKit","SystemConfiguration","UIKit","WebKit"
-   ss.weak_framework = 'AppTrackingTransparency'
    ss.libraries = "z","sqlite3","xml2"
+   ss.dependency 'AppLovinSDK', '12.1.0'
    ss.dependency 'ToBid-iOS/ToBidSDK'
  end
    
