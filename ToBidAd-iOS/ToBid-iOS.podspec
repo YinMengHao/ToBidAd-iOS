@@ -147,7 +147,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'AdScopeAdapter' do |ss|
      ss.platform     = :ios, '10.0'
      ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/adscope/*.a'
-     ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/adscope/*.framework'
+     ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/adscope/*.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/adscope/**/*'
      ss.frameworks = "AdSupport","AVFoundation","AVKit","Accelerate","AudioToolbox","AppTrackingTransparency","CoreData","CoreLocation","CoreMedia","CoreMotion","CoreGraphics","CoreTelephony","CoreImage","CoreText","Foundation","MediaPlayer","MessageUI","MobileCoreServices","MapKit","QuartzCore","QuickLook","SystemConfiguration","Security","StoreKit","WebKit","UIKit","ImageIO","SafariServices","JavaScriptCore","DeviceCheck"
      ss.libraries = "z","c++","sqlite3","xml2","bz2","c++abi","resolv.9","iconv","c"
