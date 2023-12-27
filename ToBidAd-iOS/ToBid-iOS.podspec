@@ -85,11 +85,12 @@ Pod::Spec.new do |spec|
   spec.subspec 'VungleAdapter' do |ss|
      ss.platform     = :ios, '11.0'
      ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/vungle/*.a'
-     ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/vungle/*.xcframework'
+   #   ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/vungle/*.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/vungle/**/*'
-     ss.frameworks = "AdSupport","AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","MediaPlayer","QuartzCore","StoreKit","SystemConfiguration"
-     ss.weak_frameworks = "WebKit","UIKit","Foundation"
-     ss.libraries = "z"
+   #   ss.frameworks = "AdSupport","AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","MediaPlayer","QuartzCore","StoreKit","SystemConfiguration"
+   #   ss.weak_frameworks = "WebKit","UIKit","Foundation"
+   #   ss.libraries = "z"
+     ss.dependency 'VungleAds', '7.2.0'
      ss.dependency 'ToBid-iOS/ToBidSDK'
   end
 
@@ -177,10 +178,11 @@ Pod::Spec.new do |spec|
    spec.subspec 'IronSourceAdapter' do |ss|
       ss.platform     = :ios, '11.0'
       ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/ironSource/*.a'
-      ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/ironSource/*.xcframework'
+      # ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/ironSource/*.xcframework'
       ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/ironSource/**/*'
-      ss.frameworks = "AdSupport","AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreLocation","CoreMedia","CoreTelephony","CoreVideo","Foundation","MobileCoreServices","QuartzCore","Security","StoreKit","SystemConfiguration"
-      ss.libraries = "z"
+      # ss.frameworks = "AdSupport","AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreLocation","CoreMedia","CoreTelephony","CoreVideo","Foundation","MobileCoreServices","QuartzCore","Security","StoreKit","SystemConfiguration"
+      # ss.libraries = "z"
+      ss.dependency 'IronSourceSDK', '7.5.1'
       ss.dependency 'ToBid-iOS/ToBidSDK'
    end
   
