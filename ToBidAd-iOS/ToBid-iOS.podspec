@@ -83,7 +83,7 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'VungleAdapter' do |ss|
-     ss.platform     = :ios, '10.0'
+     ss.platform     = :ios, '11.0'
      ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/vungle/*.a'
      ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/vungle/*.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/vungle/**/*'
@@ -145,7 +145,7 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'AdScopeAdapter' do |ss|
-     ss.platform     = :ios, '9.0'
+     ss.platform     = :ios, '10.0'
      ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/adscope/*.a'
      ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/adscope/*.framework'
      ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/adscope/**/*'
@@ -166,7 +166,7 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'AppLovinAdapter' do |ss|
-   ss.platform     = :ios, '9.0'
+   ss.platform     = :ios, '11.0'
    ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/applovin/*.a'
    ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/applovin/**/*'
    ss.libraries = "z","sqlite3","xml2"
@@ -175,7 +175,7 @@ Pod::Spec.new do |spec|
  end
    
    spec.subspec 'IronSourceAdapter' do |ss|
-      ss.platform     = :ios, '10.0'
+      ss.platform     = :ios, '11.0'
       ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/ironSource/*.a'
       ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/ironSource/*.xcframework'
       ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/ironSource/**/*'
