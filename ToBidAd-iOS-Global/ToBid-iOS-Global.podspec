@@ -37,7 +37,7 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'PangleAdapter' do |ss|
-     ss.ios.deployment_target = '9.0'
+     ss.ios.deployment_target = '11.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/pangle/*.a'
    #   ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/pangle/*.xcframework'
    #   ss.resource = 'tobid-sdk-ios-global/AdNetworks/pangle/*.bundle'
