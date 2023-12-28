@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = 'ToBid-iOS-Global'
-  spec.version      = '3.2.2'
+  spec.version      = '3.3.0'
   spec.summary      = 'ToBid-iOS is a SDK from Sigmob providing AD service.'
   spec.description      = <<-DESC
   ToBid-iOS provides ADs which include native、banner、splash、RewardVideo、Interstitial etc.
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.author       = { 'Codi' => 'codi.zhao@sigmob.com' }
   spec.platform     = :ios, '9.0'
   spec.ios.deployment_target = '9.0'
-  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/3.2.2_c9ba72563a0477835b092b6de41f4ab0/tobid_release_ios_global_3.2.2_20231129.zip" }
+  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/3.3.0_b7d98bef011f7c58d2073b7fbc89ba78/tobid_release_ios_global_3.3.0_20231228.zip" }
   spec.xcconfig = { 'VALID_ARCHS' => 'armv7 arm64 x86_64','VALID_ARCHS[sdk=iphoneos*]' => 'armv7 arm64','VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64', 'OTHER_LDFLAGS' => ['-lObjC'] }
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
@@ -46,7 +46,7 @@ Pod::Spec.new do |spec|
    #   ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck', 'CoreML'
    #   ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
-     ss.dependency 'Ads-Global', '5.7.0.3'
+     ss.dependency 'Ads-Global-Beta', '5.7.0.3'
 
   end
 
@@ -81,23 +81,25 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'IronSourceAdapter' do |ss|
-     ss.platform     = :ios, '10.0'
+     ss.platform     = :ios, '11.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/ironSource/*.a'
-     ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/ironSource/*.xcframework'
+   #   ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/ironSource/*.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/ironSource/**/*'
-     ss.frameworks = "AdSupport","AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreLocation","CoreMedia","CoreTelephony","CoreVideo","Foundation","MobileCoreServices","QuartzCore","Security","StoreKit","SystemConfiguration"
-     ss.libraries = "z"
+   #   ss.frameworks = "AdSupport","AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreLocation","CoreMedia","CoreTelephony","CoreVideo","Foundation","MobileCoreServices","QuartzCore","Security","StoreKit","SystemConfiguration"
+   #   ss.libraries = "z"
+     ss.dependency 'IronSourceSDK', '7.5.1'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
   end
 
   spec.subspec 'VungleAdapter' do |ss|
-     ss.platform     = :ios, '10.0'
+     ss.platform     = :ios, '11.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/vungle/*.a'
-     ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/vungle/*.xcframework'
+   #   ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/vungle/*.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/vungle/**/*'
-     ss.frameworks = "AdSupport","AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","MediaPlayer","QuartzCore","StoreKit","SystemConfiguration"
-     ss.weak_frameworks = "WebKit","UIKit","Foundation"
-     ss.libraries = "z"
+   #   ss.frameworks = "AdSupport","AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","MediaPlayer","QuartzCore","StoreKit","SystemConfiguration"
+   #   ss.weak_frameworks = "WebKit","UIKit","Foundation"
+   #   ss.libraries = "z"
+     ss.dependency 'VungleAds', '7.2.0'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
   end
 
@@ -188,9 +190,9 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'AdScopeAdapter' do |ss|
-     ss.platform     = :ios, '9.0'
+     ss.platform     = :ios, '10.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/adscope/*.a'
-     ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/adscope/*.framework'
+     ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/adscope/*.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/adscope/**/*'
      ss.frameworks = "AdSupport","AVFoundation","AVKit","Accelerate","AudioToolbox","AppTrackingTransparency","CoreData","CoreLocation","CoreMedia","CoreMotion","CoreGraphics","CoreTelephony","CoreImage","CoreText","Foundation","MediaPlayer","MessageUI","MobileCoreServices","MapKit","QuartzCore","QuickLook","SystemConfiguration","Security","StoreKit","WebKit","UIKit","ImageIO","SafariServices","JavaScriptCore","DeviceCheck"
      ss.libraries = "z","c++","sqlite3","xml2","bz2","c++abi","resolv.9","iconv","c"
