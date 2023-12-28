@@ -18,8 +18,8 @@ Pod::Spec.new do |spec|
   spec.homepage     = 'https://www.sigmob.com/'
   spec.license      = { :type => 'MIT' }
   spec.author       = { 'Codi' => 'codi.zhao@sigmob.com' }
-  spec.platform     = :ios, '9.0'
-  spec.ios.deployment_target = '9.0'
+  spec.platform     = :ios, '10.0'
+  spec.ios.deployment_target = '10.0'
   spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/3.3.0_b7d98bef011f7c58d2073b7fbc89ba78/tobid_release_ios_global_3.3.0_20231228.zip" }
   spec.xcconfig = { 'VALID_ARCHS' => 'armv7 arm64 x86_64','VALID_ARCHS[sdk=iphoneos*]' => 'armv7 arm64','VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64', 'OTHER_LDFLAGS' => ['-lObjC'] }
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
