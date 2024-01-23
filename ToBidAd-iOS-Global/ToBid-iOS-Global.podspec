@@ -39,12 +39,6 @@ Pod::Spec.new do |spec|
   spec.subspec 'PangleAdapter' do |ss|
      ss.ios.deployment_target = '11.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/pangle/*.a'
-   #   ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/pangle/*.xcframework'
-   #   ss.resource = 'tobid-sdk-ios-global/AdNetworks/pangle/*.bundle'
-   #   ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/pangle/**/*'
-   #   ss.frameworks = "UIKit", "WebKit", "MediaPlayer","AdSupport","CoreMedia","AVFoundation","CoreTelephony","StoreKit","SystemConfiguration","MobileCoreServices","CoreMotion","Accelerate","AudioToolbox","JavaScriptCore","Security","AudioToolbox","CoreGraphics","CoreAudioTypes"
-   #   ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck', 'CoreML'
-   #   ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
      ss.dependency 'Ads-Global-Beta', '5.7.0.3'
 
@@ -132,7 +126,7 @@ Pod::Spec.new do |spec|
     ss.frameworks = 'UIKit', 'MapKit', 'WebKit', 'MediaPlayer', 'CoreLocation', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox','ImageIO','QuartzCore','CoreGraphics','CoreText',"DeviceCheck"
     ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck'
     ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi'
-    ss.dependency 'ToBid-iOS-Global/TouTiaoAdapter'
+    ss.dependency 'ToBid-iOS-Global/ToBidSDK'
   end
 
 
@@ -205,6 +199,7 @@ Pod::Spec.new do |spec|
    ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/inMobi/**/*'
    ss.dependency 'InMobiSDK', '10.5.8'
    ss.dependency 'ToBid-iOS-Global/ToBidSDK'
+   
   end
 
 
