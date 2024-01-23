@@ -126,7 +126,7 @@ Pod::Spec.new do |spec|
     ss.frameworks = 'UIKit', 'MapKit', 'WebKit', 'MediaPlayer', 'CoreLocation', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox','ImageIO','QuartzCore','CoreGraphics','CoreText',"DeviceCheck"
     ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck'
     ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi'
-    ss.dependency 'ToBid-iOS-Global/ToBidSDK'
+    ss.dependency 'ToBid-iOS-Global/TouTiaoAdapter'
   end
 
 
@@ -199,7 +199,6 @@ Pod::Spec.new do |spec|
    ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/inMobi/**/*'
    ss.dependency 'InMobiSDK', '10.5.8'
    ss.dependency 'ToBid-iOS-Global/ToBidSDK'
-   
   end
 
 
