@@ -64,7 +64,7 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'MintegralAdapter' do |ss|
-     ss.platform     = :ios, '9.0'
+     ss.platform     = :ios, '10.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/mintegral-global/*.a'
      ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/mintegral-global/*.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/mintegral-global/**/*'
@@ -131,7 +131,7 @@ Pod::Spec.new do |spec|
 
 
   spec.subspec 'GDTAdapter' do |ss|
-     ss.platform     = :ios, '9.0'
+     ss.platform     = :ios, '10.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/gdt/*.a', 'tobid-sdk-ios-global/AdNetworks/gdt/lib/*.a'
      ss.source_files = 'tobid-sdk-ios-global/AdNetworks/gdt/lib/*.h'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/gdt/**/*'
@@ -143,7 +143,7 @@ Pod::Spec.new do |spec|
 
 
   spec.subspec 'KSAdapter' do |ss|
-     ss.platform     = :ios, '9.0'
+     ss.platform     = :ios, '10.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/kuaishou/*.a'
      ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/kuaishou/*.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/kuaishou/**/*'
@@ -153,7 +153,7 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'BaiduAdapter' do |ss|
-     ss.platform     = :ios, '9.0'
+     ss.platform     = :ios, '10.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/baidu/*.a'
      ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/baidu/*.framework'
      ss.resource  = 'tobid-sdk-ios-global/AdNetworks/baidu/*.bundle'
@@ -174,7 +174,7 @@ Pod::Spec.new do |spec|
   end
   
   spec.subspec 'KlevinAdapter' do |ss|
-     ss.platform     = :ios, '9.0'
+     ss.platform     = :ios, '10.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/klevin/*.a'
      ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/klevin/*.framework'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/klevin/**/*'
