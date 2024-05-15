@@ -166,7 +166,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'MSAdAdapter' do |ss|
      ss.platform     = :ios, '10.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/meishu/*.a'
-     ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/meishu/*.framework'
+     ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/meishu/*.xcframework'
      ss.resource  = 'tobid-sdk-ios-global/AdNetworks/meishu/*.bundle'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/meishu/**/*'
      ss.frameworks = "AdSupport","AVFoundation","CoreLocation","CoreMotion","CoreImage","CoreTelephony","Foundation","Security","StoreKit","UIKit","WebKit"
