@@ -30,7 +30,7 @@ Pod::Spec.new do |spec|
   # 默认的核心模块
   spec.subspec 'ToBidSDK' do |ss|
     ss.frameworks = 'ImageIO','StoreKit', 'CFNetwork', 'CoreMedia', 'AdSupport', 'CoreMotion', 'MediaPlayer', 'CoreGraphics', 'AVFoundation', 'CoreLocation', 'CoreTelephony', 'SafariServices', 'MobileCoreServices', 'SystemConfiguration', 'AudioToolbox'
-    ss.weak_framework = 'WebKit', 'UIKit', 'Foundation'
+    ss.weak_framework = 'WebKit', 'UIKit', 'Foundation','Network'
     ss.libraries = 'c++', 'z', 'sqlite3'
     ss.vendored_frameworks = ['tobid-sdk-ios-global/Core/*.xcframework']
     ss.preserve_paths = 'tobid-sdk-ios-global/Core/**/*'
