@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = 'ToBid-iOS-Global'
-  spec.version      = '3.9.0'
+  spec.version      = '4.0.0'
   spec.summary      = 'ToBid-iOS is a SDK from Sigmob providing AD service.'
   spec.description      = <<-DESC
   ToBid-iOS provides ADs which include native、banner、splash、RewardVideo、Interstitial etc.
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.author       = { 'Codi' => 'codi.zhao@sigmob.com' }
   spec.platform     = :ios, '10.0'
   spec.ios.deployment_target = '10.0'
-  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/3.9.0_c7d2b2f44b75effc3b3e54b6e6509133/tobid_release_ios_global_3.9.0_20240726.zip" }
+  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/4.0.0_413785835db07a95e152792f4c026df9/tobid_release_ios_global_4.0.0_20240909.zip" }
   spec.xcconfig = { 'VALID_ARCHS' => 'armv7 arm64 x86_64','VALID_ARCHS[sdk=iphoneos*]' => 'armv7 arm64','VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64', 'OTHER_LDFLAGS' => ['-lObjC'] }
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
@@ -45,21 +45,21 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'AdmobAdapter' do |ss|
-     ss.ios.deployment_target = '11.0'
+     ss.ios.deployment_target = '12.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/admob/*.a'
      # ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/admob/*.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/admob/**/*'
      # ss.frameworks = "AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","CoreTelephony","CoreVideo","MediaPlayer","MessageUI","MobileCoreServices","QuartzCore","Security","StoreKit","SystemConfiguration"
      # ss.libraries = 'z','sqlite3'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
-     ss.dependency 'Google-Mobile-Ads-SDK', '10.14.0'
+     ss.dependency 'Google-Mobile-Ads-SDK', '11.7.0'
   end
 
   spec.subspec 'AppLovinAdapter' do |ss|
      ss.platform     = :ios, '11.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/applovin/*.a'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/applovin/**/*'
-     ss.dependency 'AppLovinSDK', '12.1.0'
+     ss.dependency 'AppLovinSDK', '12.6.0'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
   end
 
@@ -70,7 +70,7 @@ Pod::Spec.new do |spec|
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/mintegral-global/**/*'
      ss.frameworks = "SystemConfiguration","CoreGraphics","Foundation","UIKit","AdSupport","StoreKit","QuartzCore","CoreTelephony","MobileCoreServices","Accelerate","AVFoundation","WebKit"
      ss.weak_framework = 'AppTrackingTransparency'
-     ss.libraries = 'z'
+     ss.libraries = 'z','sqlite3','xml2'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
   end
 
@@ -81,7 +81,7 @@ Pod::Spec.new do |spec|
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/ironSource/**/*'
    #   ss.frameworks = "AdSupport","AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreLocation","CoreMedia","CoreTelephony","CoreVideo","Foundation","MobileCoreServices","QuartzCore","Security","StoreKit","SystemConfiguration"
    #   ss.libraries = "z"
-     ss.dependency 'IronSourceSDK', '7.5.1'
+     ss.dependency 'IronSourceSDK', '8.2.0.0'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
   end
 
@@ -93,7 +93,7 @@ Pod::Spec.new do |spec|
    #   ss.frameworks = "AdSupport","AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","MediaPlayer","QuartzCore","StoreKit","SystemConfiguration"
    #   ss.weak_frameworks = "WebKit","UIKit","Foundation"
    #   ss.libraries = "z"
-     ss.dependency 'VungleAds', '7.2.0'
+     ss.dependency 'VungleAds', '7.4.0'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
   end
 
@@ -104,7 +104,7 @@ Pod::Spec.new do |spec|
      # ss.ios.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/unity/UnityAds.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/unity/**/*'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
-     ss.dependency 'UnityAds', '4.9.2'
+     ss.dependency 'UnityAds', '4.12.2'
   end
   
   spec.subspec 'TouTiaoAdapter' do |ss|
@@ -135,9 +135,9 @@ Pod::Spec.new do |spec|
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/gdt/*.a', 'tobid-sdk-ios-global/AdNetworks/gdt/lib/*.a'
      ss.source_files = 'tobid-sdk-ios-global/AdNetworks/gdt/lib/*.h'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/gdt/**/*'
-     ss.frameworks = "StoreKit","Security","CoreTelephony","AdSupport","CoreLocation","QuartzCore","SystemConfiguration","AVFoundation"
+     ss.frameworks = "StoreKit","Security","CoreTelephony","AdSupport","CoreLocation","QuartzCore","SystemConfiguration","AVFoundation","JavaScriptCore"
      ss.weak_framework = 'WebKit'
-     ss.libraries = 'z', 'xml2'
+     ss.libraries = 'z', 'xml2','sqlite3',"c++","c++abi"
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
   end
 
@@ -147,7 +147,7 @@ Pod::Spec.new do |spec|
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/kuaishou/*.a'
      ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/kuaishou/*.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/kuaishou/**/*'
-     ss.frameworks = "Foundation","UIKit","MobileCoreServices","CoreGraphics","Security","SystemConfiguration","CoreTelephony","AdSupport","CoreData","StoreKit","AVFoundation","MediaPlayer","CoreMedia","WebKit","Accelerate","CoreLocation","AVKit","MessageUI","QuickLook","AudioToolBox","JavaScriptCore","CoreMotion"
+     ss.frameworks = "Foundation","UIKit","MobileCoreServices","CoreGraphics","Security","SystemConfiguration","CoreTelephony","AdSupport","CoreData","StoreKit","AVFoundation","MediaPlayer","CoreMedia","WebKit","Accelerate","CoreLocation","AVKit","MessageUI","QuickLook","AudioToolBox","JavaScriptCore","CoreMotion","Photos"
      ss.libraries = "z","resolv.9","sqlite3","c++","c++abi"
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
   end
@@ -169,7 +169,7 @@ Pod::Spec.new do |spec|
      ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/meishu/*.xcframework'
      ss.resource  = 'tobid-sdk-ios-global/AdNetworks/meishu/*.bundle'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/meishu/**/*'
-     ss.frameworks = "AdSupport","AVFoundation","CoreLocation","CoreMotion","CoreImage","CoreTelephony","Foundation","Security","StoreKit","UIKit","WebKit"
+     ss.frameworks = "AdSupport","AVFoundation","CoreLocation","CoreMotion","CoreImage","CoreTelephony","Foundation","Security","StoreKit","UIKit","WebKit","SystemConfiguration"
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
   end
   
