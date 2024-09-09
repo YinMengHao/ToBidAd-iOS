@@ -43,7 +43,7 @@ Pod::Spec.new do |spec|
      ss.resource = 'tobid-sdk-ios-cn/AdNetworks/csj/*.bundle'
      ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/csj/**/*'
      ss.frameworks = 'UIKit', 'MapKit', 'WebKit', 'MediaPlayer', 'CoreLocation', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox','ImageIO','QuartzCore','CoreGraphics','CoreText'
-     ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck', 'CoreML','CoreAudioTypes'
+     ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck', 'CoreML'
      ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi'
      ss.dependency 'ToBid-iOS/ToBidSDK'
   end
@@ -53,9 +53,9 @@ Pod::Spec.new do |spec|
     ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/gromore/*.a'
     ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/gromore/*.xcframework'
     ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/gromore/**/*'
-    ss.frameworks = 'UIKit', 'MapKit', 'WebKit', 'MediaPlayer', 'CoreLocation', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox','ImageIO','QuartzCore','CoreGraphics','CoreText'
-    ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck', 'CoreML','CoreAudioTypes'
-    ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi'
+   #  ss.frameworks = 'UIKit', 'MapKit', 'WebKit', 'MediaPlayer', 'CoreLocation', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox','ImageIO','QuartzCore','CoreGraphics','CoreText'
+   #  ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck', 'CoreML','CoreAudioTypes'
+   #  ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi'
     ss.dependency 'ToBid-iOS/TouTiaoAdapter'
   end
 
