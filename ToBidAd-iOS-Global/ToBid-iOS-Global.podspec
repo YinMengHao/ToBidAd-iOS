@@ -66,11 +66,12 @@ Pod::Spec.new do |spec|
   spec.subspec 'MintegralAdapter' do |ss|
      ss.platform     = :ios, '10.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/mintegral-global/*.a'
-     ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/mintegral-global/*.xcframework'
+          #  ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/mintegral-global/*.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/mintegral-global/**/*'
-     ss.frameworks = "SystemConfiguration","CoreGraphics","Foundation","UIKit","AdSupport","StoreKit","QuartzCore","CoreTelephony","MobileCoreServices","Accelerate","AVFoundation","WebKit"
-     ss.weak_framework = 'AppTrackingTransparency'
-     ss.libraries = 'z','sqlite3','xml2'
+          #  ss.frameworks = "SystemConfiguration","CoreGraphics","Foundation","UIKit","AdSupport","StoreKit","QuartzCore","CoreTelephony","MobileCoreServices","Accelerate","AVFoundation","WebKit"
+          #  ss.weak_framework = 'AppTrackingTransparency'
+          #  ss.libraries = 'z','sqlite3','xml2'
+     ss.dependency 'MintegralAdSDK', '7.6.9'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
   end
 
@@ -113,7 +114,7 @@ Pod::Spec.new do |spec|
      ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/csj/*.xcframework'
      ss.resource = 'tobid-sdk-ios-global/AdNetworks/csj/*.bundle'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/csj/**/*'
-     ss.frameworks = 'UIKit', 'MapKit', 'WebKit', 'MediaPlayer', 'CoreLocation', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox','ImageIO','QuartzCore','CoreGraphics','CoreText',"DeviceCheck"
+     ss.frameworks = 'UIKit', 'MapKit', 'WebKit', 'MediaPlayer', 'CoreLocation', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox','ImageIO','QuartzCore','CoreGraphics','CoreText','CoreAudioTypes'
      ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck', 'CoreML'
      ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
@@ -123,7 +124,7 @@ Pod::Spec.new do |spec|
     ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/gromore/*.a'
     ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/gromore/*.xcframework'
     ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/gromore/**/*'
-    ss.frameworks = 'UIKit', 'MapKit', 'WebKit', 'MediaPlayer', 'CoreLocation', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox','ImageIO','QuartzCore','CoreGraphics','CoreText',"DeviceCheck"
+    ss.frameworks = 'UIKit', 'MapKit', 'WebKit', 'MediaPlayer', 'CoreLocation', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox','ImageIO','QuartzCore','CoreGraphics','CoreText','CoreAudioTypes'
     ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck', 'CoreML'
     ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi'
     ss.dependency 'ToBid-iOS-Global/TouTiaoAdapter'
