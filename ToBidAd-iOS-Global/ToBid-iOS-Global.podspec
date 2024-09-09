@@ -86,7 +86,7 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'VungleAdapter' do |ss|
-     ss.platform     = :ios, '11.0'
+     ss.platform     = :ios, '12.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/vungle/*.a'
    #   ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/vungle/*.xcframework'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/vungle/**/*'
@@ -114,7 +114,7 @@ Pod::Spec.new do |spec|
      ss.resource = 'tobid-sdk-ios-global/AdNetworks/csj/*.bundle'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/csj/**/*'
      ss.frameworks = 'UIKit', 'MapKit', 'WebKit', 'MediaPlayer', 'CoreLocation', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox','ImageIO','QuartzCore','CoreGraphics','CoreText',"DeviceCheck"
-     ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck'
+     ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck', 'CoreML'
      ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
   end
@@ -124,7 +124,7 @@ Pod::Spec.new do |spec|
     ss.vendored_frameworks = 'tobid-sdk-ios-global/AdNetworks/gromore/*.xcframework'
     ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/gromore/**/*'
     ss.frameworks = 'UIKit', 'MapKit', 'WebKit', 'MediaPlayer', 'CoreLocation', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate','AudioToolbox','JavaScriptCore','Security','CoreImage','AudioToolbox','ImageIO','QuartzCore','CoreGraphics','CoreText',"DeviceCheck"
-    ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck'
+    ss.weak_frameworks = 'AppTrackingTransparency', 'DeviceCheck', 'CoreML'
     ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv', 'c++abi'
     ss.dependency 'ToBid-iOS-Global/TouTiaoAdapter'
   end
