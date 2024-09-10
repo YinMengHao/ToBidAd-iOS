@@ -68,7 +68,13 @@ Pod::Spec.new do |spec|
        #  ss.frameworks = "SystemConfiguration","CoreGraphics","Foundation","UIKit","AdSupport","StoreKit","QuartzCore","CoreTelephony","MobileCoreServices","Accelerate","AVFoundation","WebKit"
        #  ss.weak_framework = 'AppTrackingTransparency'
        #  ss.libraries = 'z','sqlite3','xml2'
-     ss.dependency 'MintegralAdSDK', '7.6.9'
+     ss.dependency 'MintegralAdSDK/BidNativeAd', '7.6.9'
+     ss.dependency 'MintegralAdSDK/BidRewardVideoAd', '7.6.9'
+     ss.dependency 'MintegralAdSDK/BidNativeAdvancedAd', '7.6.9'
+     ss.dependency 'MintegralAdSDK/BidBannerAd', '7.6.9'
+     ss.dependency 'MintegralAdSDK/BidSplashAd', '7.6.9'
+     ss.dependency 'MintegralAdSDK/NewInterstitialAd', '7.6.9'
+     ss.dependency 'MintegralAdSDK/BidNewInterstitialAd', '7.6.9'
      ss.dependency 'ToBid-iOS/ToBidSDK'
   end
 
