@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = 'ToBid-iOS-Global'
-  spec.version      = '4.0.1'
+  spec.version      = '4.0.2'
   spec.summary      = 'ToBid-iOS is a SDK from Sigmob providing AD service.'
   spec.description      = <<-DESC
   ToBid-iOS provides ADs which include native、banner、splash、RewardVideo、Interstitial etc.
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.author       = { 'Codi' => 'codi.zhao@sigmob.com' }
   spec.platform     = :ios, '10.0'
   spec.ios.deployment_target = '10.0'
-  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/4.0.1_4015cd69ed26040afef35d73dfc2df50/tobid_release_ios_global_4.0.1_20240911.zip" }
+  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/4.0.2_dd0e757de92430c7f020d964872d43b6/tobid_release_ios_global_4.0.2_20240924.zip" }
   spec.xcconfig = { 'VALID_ARCHS' => 'armv7 arm64 x86_64','VALID_ARCHS[sdk=iphoneos*]' => 'armv7 arm64','VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64', 'OTHER_LDFLAGS' => ['-lObjC'] }
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
@@ -52,14 +52,14 @@ Pod::Spec.new do |spec|
      # ss.frameworks = "AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","CoreTelephony","CoreVideo","MediaPlayer","MessageUI","MobileCoreServices","QuartzCore","Security","StoreKit","SystemConfiguration"
      # ss.libraries = 'z','sqlite3'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
-     ss.dependency 'Google-Mobile-Ads-SDK', '11.7.0'
+     ss.dependency 'Google-Mobile-Ads-SDK', '11.10.0'
   end
 
   spec.subspec 'AppLovinAdapter' do |ss|
      ss.platform     = :ios, '11.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/applovin/*.a'
      ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/applovin/**/*'
-     ss.dependency 'AppLovinSDK', '12.6.0'
+     ss.dependency 'AppLovinSDK', '13.0.0'
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
   end
 
