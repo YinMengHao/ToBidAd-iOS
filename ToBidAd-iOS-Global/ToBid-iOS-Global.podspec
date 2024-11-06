@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = 'ToBid-iOS-Global'
-  spec.version      = '4.1.0'
+  spec.version      = '4.1.10'
   spec.summary      = 'ToBid-iOS is a SDK from Sigmob providing AD service.'
   spec.description      = <<-DESC
   ToBid-iOS provides ADs which include native、banner、splash、RewardVideo、Interstitial etc.
@@ -54,6 +54,14 @@ Pod::Spec.new do |spec|
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
      ss.dependency 'Google-Mobile-Ads-SDK', '11.10.0'
   end
+  
+  spec.subspec 'QuMengAdapter' do |ss|
+   ss.ios.deployment_target = '11.0'
+   ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/qumeng/*.a'
+   ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/qumeng/**/*'
+   ss.dependency 'ToBid-iOS-Global/ToBidSDK'
+   ss.dependency 'QuMengAdSDK', '1.2.0'
+end
 
   spec.subspec 'AppLovinAdapter' do |ss|
      ss.platform     = :ios, '11.0'

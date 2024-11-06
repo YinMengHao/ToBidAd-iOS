@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = 'ToBid-iOS'
-  spec.version      = '4.1.0'
+  spec.version      = '4.1.10'
   spec.summary      = 'ToBid-iOS is a SDK from Sigmob providing AD service.'
   spec.description      = <<-DESC
   ToBid-iOS provides ADs which include native、banner、splash、RewardVideo、Interstitial etc.
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.author       = { 'Codi' => 'codi.zhao@sigmob.com' }
   spec.platform     = :ios, '9.0'
   spec.ios.deployment_target = '9.0'
-  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/4.1.0_f7dd7bd9e76b2ee775b6f97a2b5dc03b/tobid_release_ios_cn_4.1.0_20241015.zip" }
+  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/4.1.10_3be467d4330edcc649ed7bd2b912304a/tobid_release_ios_cn_4.1.10_20241106.zip" }
   spec.xcconfig = { 'VALID_ARCHS' => 'armv7 arm64 x86_64','VALID_ARCHS[sdk=iphoneos*]' => 'armv7 arm64','VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64', 'OTHER_LDFLAGS' => ['-lObjC'] }
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
@@ -173,6 +173,14 @@ Pod::Spec.new do |spec|
      ss.dependency 'Google-Mobile-Ads-SDK', '11.10.0'
   end
 
+  spec.subspec 'QuMengAdapter' do |ss|
+     ss.ios.deployment_target = '11.0'
+     ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/qumeng/*.a'
+     ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/qumeng/**/*'
+     ss.dependency 'ToBid-iOS/ToBidSDK'
+     ss.dependency 'QuMengAdSDK', '1.2.0'
+  end
+  
   spec.subspec 'AppLovinAdapter' do |ss|
    ss.platform     = :ios, '11.0'
    ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/applovin/*.a'
