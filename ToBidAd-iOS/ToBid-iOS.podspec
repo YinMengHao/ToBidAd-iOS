@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = 'ToBid-iOS'
-  spec.version      = '4.1.11'
+  spec.version      = '4.2.0'
   spec.summary      = 'ToBid-iOS is a SDK from Sigmob providing AD service.'
   spec.description      = <<-DESC
   ToBid-iOS provides ADs which include native、banner、splash、RewardVideo、Interstitial etc.
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.author       = { 'Codi' => 'codi.zhao@sigmob.com' }
   spec.platform     = :ios, '9.0'
   spec.ios.deployment_target = '9.0'
-  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/4.1.11_9870a7b1a421d24bdf88a7a29136e366/tobid_release_ios_cn_4.1.11_20241107.zip" }
+  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/4.2.0_d9a6cd5ddb7a7cf55023e06cf6aeeecd/tobid_release_ios_cn_4.2.0_20241127.zip" }
   spec.xcconfig = { 'VALID_ARCHS' => 'armv7 arm64 x86_64','VALID_ARCHS[sdk=iphoneos*]' => 'armv7 arm64','VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64', 'OTHER_LDFLAGS' => ['-lObjC'] }
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
@@ -68,13 +68,13 @@ Pod::Spec.new do |spec|
        #  ss.frameworks = "SystemConfiguration","CoreGraphics","Foundation","UIKit","AdSupport","StoreKit","QuartzCore","CoreTelephony","MobileCoreServices","Accelerate","AVFoundation","WebKit"
        #  ss.weak_framework = 'AppTrackingTransparency'
        #  ss.libraries = 'z','sqlite3','xml2'
-     ss.dependency 'MintegralAdSDK/BidNativeAd', '7.7.2'
-     ss.dependency 'MintegralAdSDK/BidRewardVideoAd', '7.7.2'
-     ss.dependency 'MintegralAdSDK/BidNativeAdvancedAd', '7.7.2'
-     ss.dependency 'MintegralAdSDK/BidBannerAd', '7.7.2'
-     ss.dependency 'MintegralAdSDK/BidSplashAd', '7.7.2'
-     ss.dependency 'MintegralAdSDK/NewInterstitialAd', '7.7.2'
-     ss.dependency 'MintegralAdSDK/BidNewInterstitialAd', '7.7.2'
+     ss.dependency 'MintegralAdSDK/BidNativeAd', '7.7.3'
+     ss.dependency 'MintegralAdSDK/BidRewardVideoAd', '7.7.3'
+     ss.dependency 'MintegralAdSDK/BidNativeAdvancedAd', '7.7.3'
+     ss.dependency 'MintegralAdSDK/BidBannerAd', '7.7.3'
+     ss.dependency 'MintegralAdSDK/BidSplashAd', '7.7.3'
+     ss.dependency 'MintegralAdSDK/NewInterstitialAd', '7.7.3'
+     ss.dependency 'MintegralAdSDK/BidNewInterstitialAd', '7.7.3'
      ss.dependency 'ToBid-iOS/ToBidSDK'
   end
 
