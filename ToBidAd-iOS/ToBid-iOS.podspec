@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = 'ToBid-iOS'
-  spec.version      = '4.2.1'
+  spec.version      = '4.3.0'
   spec.summary      = 'ToBid-iOS is a SDK from Sigmob providing AD service.'
   spec.description      = <<-DESC
   ToBid-iOS provides ADs which include native、banner、splash、RewardVideo、Interstitial etc.
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.author       = { 'Codi' => 'codi.zhao@sigmob.com' }
   spec.platform     = :ios, '9.0'
   spec.ios.deployment_target = '9.0'
-  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/4.2.1_c1dae70b3f8b5936bc3a2261d24c28f9/tobid_release_ios_cn_4.2.1_20241204.zip" }
+  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/4.3.0_1c046357afd7846e83874d39b4badc5e/tobid_release_ios_cn_4.3.0_20241227.zip" }
   spec.xcconfig = { 'VALID_ARCHS' => 'armv7 arm64 x86_64','VALID_ARCHS[sdk=iphoneos*]' => 'armv7 arm64','VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64', 'OTHER_LDFLAGS' => ['-lObjC'] }
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
@@ -174,13 +174,21 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'QuMengAdapter' do |ss|
-     ss.ios.deployment_target = '11.0'
-     ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/qumeng/*.a'
-     ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/qumeng/**/*'
-     ss.dependency 'ToBid-iOS/ToBidSDK'
-     ss.dependency 'QuMengAdSDK', '1.2.0'
-  end
-  
+   ss.ios.deployment_target = '11.0'
+   ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/qumeng/*.a'
+   ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/qumeng/**/*'
+   ss.dependency 'ToBid-iOS/ToBidSDK'
+   ss.dependency 'QuMengAdSDK', '1.2.0'
+end
+
+spec.subspec 'BidResultAdapter' do |ss|
+   ss.ios.deployment_target = '9.0'
+   ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/bidresult/*.a'
+   ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/bidresult/**/*'
+   ss.dependency 'ToBid-iOS/ToBidSDK'
+end
+
+
   spec.subspec 'AppLovinAdapter' do |ss|
    ss.platform     = :ios, '11.0'
    ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/applovin/*.a'
