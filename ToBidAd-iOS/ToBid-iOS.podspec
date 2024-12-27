@@ -184,7 +184,7 @@ end
 spec.subspec 'BidResultAdapter' do |ss|
    ss.ios.deployment_target = '9.0'
    ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/bidresult/*.a'
-   ss.vendored_headers = 'tobid-sdk-ios-cn/AdNetworks/bidresult/*.h'
+   ss.public_header_files = 'tobid-sdk-ios-cn/AdNetworks/bidresult/*.h'
    ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/bidresult/**/*'
    ss.dependency 'ToBid-iOS/ToBidSDK'
 end
