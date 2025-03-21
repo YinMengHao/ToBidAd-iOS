@@ -64,7 +64,7 @@ Pod::Spec.new do |spec|
      ss.platform     = :ios, '10.0'
      ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/mintegral-cn/*.a'
        #  ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/mintegral-cn/*.xcframework'
-     ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/mintegral-cn/**/*'
+   #   ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/mintegral-cn/**/*'
        #  ss.frameworks = "SystemConfiguration","CoreGraphics","Foundation","UIKit","AdSupport","StoreKit","QuartzCore","CoreTelephony","MobileCoreServices","Accelerate","AVFoundation","WebKit"
        #  ss.weak_framework = 'AppTrackingTransparency'
        #  ss.libraries = 'z','sqlite3','xml2'
@@ -93,7 +93,7 @@ Pod::Spec.new do |spec|
      ss.platform     = :ios, '12.0'
      ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/vungle/*.a'
    #   ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/vungle/*.xcframework'
-     ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/vungle/**/*'
+   #   ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/vungle/**/*'
    #   ss.frameworks = "AdSupport","AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","MediaPlayer","QuartzCore","StoreKit","SystemConfiguration"
    #   ss.weak_frameworks = "WebKit","UIKit","Foundation"
    #   ss.libraries = "z"
@@ -106,7 +106,7 @@ Pod::Spec.new do |spec|
      ss.ios.deployment_target = '12.0'
      ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/unity/*.a'
      # ss.ios.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/unity/UnityAds.xcframework'
-     ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/unity/**/*'
+   #   ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/unity/**/*'
      ss.dependency 'ToBid-iOS/ToBidSDK'
      ss.dependency 'UnityAds', '4.12.2'
   end
@@ -166,7 +166,7 @@ Pod::Spec.new do |spec|
      ss.ios.deployment_target = '12.0'
      ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/admob/*.a'
      # ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/admob/*.xcframework'
-     ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/admob/**/*'
+   #   ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/admob/**/*'
      # ss.frameworks = "AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreMedia","CoreTelephony","CoreVideo","MediaPlayer","MessageUI","MobileCoreServices","QuartzCore","Security","StoreKit","SystemConfiguration"
      # ss.libraries = 'z','sqlite3'
      ss.dependency 'ToBid-iOS/ToBidSDK'
@@ -176,7 +176,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'QuMengAdapter' do |ss|
    ss.ios.deployment_target = '11.0'
    ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/qumeng/*.a'
-   ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/qumeng/**/*'
+   # ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/qumeng/**/*'
    ss.dependency 'ToBid-iOS/ToBidSDK'
    ss.dependency 'QuMengAdSDK', '1.3.0'
   end
@@ -184,7 +184,7 @@ Pod::Spec.new do |spec|
   spec.subspec 'JADYunAdapter' do |ss|
    ss.ios.deployment_target = '11.0'
    ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/jadYun/*.a'
-   ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/jadYun/**/*'
+   # ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/jadYun/**/*'
    ss.dependency 'ToBid-iOS/ToBidSDK'
    ss.dependency 'JADYun', '2.6.8'
   end
@@ -204,7 +204,7 @@ end
   spec.subspec 'AppLovinAdapter' do |ss|
    ss.platform     = :ios, '11.0'
    ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/applovin/*.a'
-   ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/applovin/**/*'
+   # ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/applovin/**/*'
    ss.libraries = "z","sqlite3","xml2"
    ss.dependency 'AppLovinSDK', '13.0.0'
    ss.dependency 'ToBid-iOS/ToBidSDK'
@@ -214,7 +214,7 @@ end
       ss.platform     = :ios, '12.0'
       ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/ironSource/*.a'
       # ss.vendored_frameworks = 'tobid-sdk-ios-cn/AdNetworks/ironSource/*.xcframework'
-      ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/ironSource/**/*'
+      # ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/ironSource/**/*'
       # ss.frameworks = "AdSupport","AudioToolbox","AVFoundation","CFNetwork","CoreGraphics","CoreLocation","CoreMedia","CoreTelephony","CoreVideo","Foundation","MobileCoreServices","QuartzCore","Security","StoreKit","SystemConfiguration"
       # ss.libraries = "z"
       ss.dependency 'IronSourceSDK', '8.2.0.0'
