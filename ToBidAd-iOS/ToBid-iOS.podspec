@@ -68,13 +68,13 @@ Pod::Spec.new do |spec|
        #  ss.frameworks = "SystemConfiguration","CoreGraphics","Foundation","UIKit","AdSupport","StoreKit","QuartzCore","CoreTelephony","MobileCoreServices","Accelerate","AVFoundation","WebKit"
        #  ss.weak_framework = 'AppTrackingTransparency'
        #  ss.libraries = 'z','sqlite3','xml2'
-     ss.dependency 'MintegralAdSDK/BidNativeAd', '7.7.3'
-     ss.dependency 'MintegralAdSDK/BidRewardVideoAd', '7.7.3'
-     ss.dependency 'MintegralAdSDK/BidNativeAdvancedAd', '7.7.3'
-     ss.dependency 'MintegralAdSDK/BidBannerAd', '7.7.3'
-     ss.dependency 'MintegralAdSDK/BidSplashAd', '7.7.3'
-     ss.dependency 'MintegralAdSDK/NewInterstitialAd', '7.7.3'
-     ss.dependency 'MintegralAdSDK/BidNewInterstitialAd', '7.7.3'
+     ss.dependency 'MintegralAdSDK/BidNativeAd', '7.7.6'
+     ss.dependency 'MintegralAdSDK/BidRewardVideoAd', '7.7.6'
+     ss.dependency 'MintegralAdSDK/BidNativeAdvancedAd', '7.7.6'
+     ss.dependency 'MintegralAdSDK/BidBannerAd', '7.7.6'
+     ss.dependency 'MintegralAdSDK/BidSplashAd', '7.7.6'
+     ss.dependency 'MintegralAdSDK/NewInterstitialAd', '7.7.6'
+     ss.dependency 'MintegralAdSDK/BidNewInterstitialAd', '7.7.6'
      ss.dependency 'ToBid-iOS/ToBidSDK'
   end
 
@@ -178,7 +178,7 @@ Pod::Spec.new do |spec|
    ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/qumeng/*.a'
    # ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/qumeng/**/*'
    ss.dependency 'ToBid-iOS/ToBidSDK'
-   ss.dependency 'QuMengAdSDK', '1.3.0'
+   ss.dependency 'QuMengAdSDK', '1.3.2'
   end
 
   spec.subspec 'JADYunAdapter' do |ss|
