@@ -155,16 +155,16 @@ end
     ss.dependency 'ToBid-iOS-Global/TouTiaoAdapter'
   end
 
-
   spec.subspec 'GDTAdapter' do |ss|
      ss.platform     = :ios, '10.0'
      ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/gdt/*.a', 'tobid-sdk-ios-global/AdNetworks/gdt/lib/*.a'
-     ss.source_files = 'tobid-sdk-ios-global/AdNetworks/gdt/lib/*.h'
-     ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/gdt/**/*'
-     ss.frameworks = "StoreKit","Security","CoreTelephony","AdSupport","CoreLocation","QuartzCore","SystemConfiguration","AVFoundation","JavaScriptCore"
-     ss.weak_framework = 'WebKit'
-     ss.libraries = 'z', 'xml2','sqlite3',"c++","c++abi"
+   #   ss.source_files = 'tobid-sdk-ios-global/AdNetworks/gdt/lib/*.h'
+   #   ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/gdt/**/*'
+   #   ss.frameworks = "StoreKit","Security","CoreTelephony","AdSupport","CoreLocation","QuartzCore","SystemConfiguration","AVFoundation","JavaScriptCore"
+   #   ss.weak_framework = 'WebKit'
+   #   ss.libraries = 'z', 'xml2','sqlite3',"c++","c++abi"
      ss.dependency 'ToBid-iOS-Global/ToBidSDK'
+     ss.dependency 'GDTMobSDK', '4.15.30'
   end
 
 

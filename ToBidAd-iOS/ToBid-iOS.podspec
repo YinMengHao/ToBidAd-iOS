@@ -80,13 +80,14 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'GDTAdapter' do |ss|
      ss.platform     = :ios, '9.0'
-     ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/gdt/*.a', 'tobid-sdk-ios-cn/AdNetworks/gdt/lib/*.a'
-     ss.source_files = 'tobid-sdk-ios-cn/AdNetworks/gdt/lib/*.h'
-     ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/gdt/**/*'
-     ss.frameworks = "StoreKit","Security","CoreTelephony","AdSupport","CoreLocation","QuartzCore","SystemConfiguration","AVFoundation","JavaScriptCore"
-     ss.weak_framework = 'WebKit'
-     ss.libraries = 'z', 'xml2','sqlite3',"c++","c++abi"
+     ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/gdt/*.a'
+   #   ss.source_files = 'tobid-sdk-ios-cn/AdNetworks/gdt/lib/*.h'
+   #   ss.preserve_paths = 'tobid-sdk-ios-cn/AdNetworks/gdt/**/*'
+   #   ss.frameworks = "StoreKit","Security","CoreTelephony","AdSupport","CoreLocation","QuartzCore","SystemConfiguration","AVFoundation","JavaScriptCore"
+   #   ss.weak_framework = 'WebKit'
+   #   ss.libraries = 'z', 'xml2','sqlite3',"c++","c++abi"
      ss.dependency 'ToBid-iOS/ToBidSDK'
+     ss.dependency 'GDTMobSDK', '4.15.30'
   end
 
   spec.subspec 'VungleAdapter' do |ss|
