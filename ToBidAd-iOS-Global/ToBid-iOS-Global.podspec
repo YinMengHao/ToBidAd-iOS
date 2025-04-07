@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.author       = { 'Codi' => 'codi.zhao@sigmob.com' }
   spec.platform     = :ios, '10.0'
   spec.ios.deployment_target = '10.0'
-  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/4.3.20_241d9b134654d7ea502d3abea308b31c/tobid_release_ios_global_4.3.20_20250212.zip" }
+  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/4.4.30_efc5eabf153a4f1180f782918848875e/tobid_release_ios_global_4.4.30_20250407.zip" }
   spec.xcconfig = { 'VALID_ARCHS' => 'armv7 arm64 x86_64','VALID_ARCHS[sdk=iphoneos*]' => 'armv7 arm64','VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64', 'OTHER_LDFLAGS' => ['-lObjC'] }
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
@@ -232,8 +232,22 @@ end
    ss.ios.deployment_target = '11.0'
    ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/jadYun/*.a'
    # ss.preserve_paths = 'tobid-sdk-ios-global/AdNetworks/jadYun/**/*'
-   ss.dependency 'ToBid-iOS/ToBidSDK'
+   ss.dependency 'ToBid-iOS-Global/ToBidSDK'
    ss.dependency 'JADYun', '2.6.8'
+  end
+
+  spec.subspec 'OctopusAdapter' do |ss|
+   ss.ios.deployment_target = '11.0'
+   ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/octopus/*.a'
+   ss.dependency 'ToBid-iOS-Global/ToBidSDK'
+   ss.dependency 'OctopusSDK', '1.6.2.10'
+  end
+
+  spec.subspec 'MercuryAdapter' do |ss|
+   ss.ios.deployment_target = '10.0'
+   ss.vendored_libraries = 'tobid-sdk-ios-global/AdNetworks/mercury/*.a'
+   ss.dependency 'ToBid-iOS-Global/ToBidSDK'
+   ss.dependency 'MercurySDK', '4.4.8'
   end
 
 end
