@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.author       = { 'Codi' => 'codi.zhao@sigmob.com' }
   spec.platform     = :ios, '9.0'
   spec.ios.deployment_target = '9.0'
-  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/4.5.5_a17df8689e9e6591e5a210fcf5631c84/tobid_release_ios_cn_4.5.5_20250604.zip" }
+  spec.source       = { :http => "https://sdkres.sigmob.cn/ToBid/ios/4.5.7_2fda38bc892150ca7554256968f48ec0/tobid_release_ios_cn_4.5.7_20250623.zip" }
   spec.xcconfig = { 'VALID_ARCHS' => 'armv7 arm64 x86_64','VALID_ARCHS[sdk=iphoneos*]' => 'armv7 arm64','VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64', 'OTHER_LDFLAGS' => ['-lObjC'] }
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
@@ -201,7 +201,7 @@ Pod::Spec.new do |spec|
    ss.ios.deployment_target = '10.0'
    ss.vendored_libraries = 'tobid-sdk-ios-cn/AdNetworks/mercury/*.a'
    ss.dependency 'ToBid-iOS/ToBidSDK'
-   ss.dependency 'MercurySDK', '4.4.8'
+   ss.dependency 'MercurySDK', '4.5.2.1'
   end
 
 spec.subspec 'BidResultAdapter' do |ss|
