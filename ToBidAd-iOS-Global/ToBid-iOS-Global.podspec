@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = 'ToBid-iOS-Global'
-  spec.version      = '4.5.7'
+  spec.version      = '4.5.10'
   spec.summary      = 'ToBid-iOS is a SDK from Sigmob providing AD service.'
   spec.description      = <<-DESC
   ToBid-iOS provides ADs which include native、banner、splash、RewardVideo、Interstitial etc.
