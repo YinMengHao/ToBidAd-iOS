@@ -87,7 +87,7 @@ Pod::Spec.new do |spec|
    #   ss.weak_framework = 'WebKit'
    #   ss.libraries = 'z', 'xml2','sqlite3',"c++","c++abi"
      ss.dependency 'ToBid-iOS/ToBidSDK'
-     ss.dependency 'GDTMobSDK', '4.15.40'
+     ss.dependency 'GDTMobSDK', '4.15.41'
   end
 
   spec.subspec 'VungleAdapter' do |ss|
